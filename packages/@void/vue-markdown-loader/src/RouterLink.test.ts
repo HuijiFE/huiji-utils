@@ -1,7 +1,7 @@
 import * as MarkdownIt from 'markdown-it';
 import pluginRouterLink, {
   PluginRouterLinkOptions,
-} from '@void/vue-markdown-loader/src/RouterLinkPlugin';
+} from '@void/vue-markdown-loader/src/RouterLink';
 
 let md: MarkdownIt.MarkdownIt;
 

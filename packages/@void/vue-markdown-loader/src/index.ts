@@ -1,10 +1,10 @@
-import { PluginRouterLinkOptions } from './RouterLinkPlugin';
+import { PluginRouterLinkOptions } from './RouterLink';
 
 /**
  * Webpack loader vue-markdown-loader options
  */
 export interface VueMarkdownLoaderOptions {
-  routerLinkOptions: PluginRouterLinkOptions;
+  routerLinkOptions?: PluginRouterLinkOptions;
 }
 
 /**
