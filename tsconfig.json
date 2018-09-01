@@ -17,6 +17,8 @@
     "allowSyntheticDefaultImports": false,
     "rootDir": ".",
     "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
