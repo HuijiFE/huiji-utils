@@ -6,4 +6,5 @@ module.exports = {
   },
   testMatch: ['**/tests/**/*.ts|**/*.(spec|test).(js|ts)'],
   testURL: 'http://localhost/',
+  moduleDirectories: ['node_modules', '../../'],
 };

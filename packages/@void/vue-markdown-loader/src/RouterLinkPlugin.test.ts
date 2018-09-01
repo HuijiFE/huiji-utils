@@ -1,11 +1,7 @@
-/**
- * Test Module: RouterLinkPlugin
- */
-
 import * as MarkdownIt from 'markdown-it';
 import pluginRouterLink, {
   PluginRouterLinkOptions,
-} from '@void/markdown-renderer/src/RouterLinkPlugin';
+} from '@void/vue-markdown-loader/src/RouterLinkPlugin';
 
 let md: MarkdownIt.MarkdownIt;
 

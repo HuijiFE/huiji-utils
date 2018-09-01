@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "clean:dist": "rimraf ./dist",
-    "build": "yarn clean:dist && tsc -p ./tsconfig.json",
-    "lint": "tslint -c ./tslint.json -p ./tsconfig.json",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.project.json",
+    "lint": "tslint -c ./tslint.project.json -p ./tsconfig.project.json",
     "test:unit": "jest --maxWorkers=4"
   },
   "dependencies": {
