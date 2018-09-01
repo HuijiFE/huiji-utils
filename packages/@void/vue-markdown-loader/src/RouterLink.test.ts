@@ -25,9 +25,12 @@ describe('RouterLinkPlugin', () => {
 
   test('Test empty link', () => {
     init();
-    expect(md.renderInline('[Empty link]()')).toBe(
-      '<router-link to="">Empty link</router-link>',
-    );
+    expect(md.renderInline('[Empty link]()')).toBe('<a href="">Empty link</a>');
+  });
+
+  test('Test anchor link', () => {
+    init();
+    expect(md.renderInline('[Title 1](#title-1)')).toBe('<a href="#title-1">Title 1</a>');
   });
 
   test('Test linkify link', () => {

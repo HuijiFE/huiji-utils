@@ -54,7 +54,7 @@ export default function pluginRouterLink(
         Object.entries(externalAttributes).forEach(([name, value]) =>
           token.attrSet(name, value),
         );
-      } else if (internalAsRouterLink) {
+      } else if (internalAsRouterLink && href !== '' && !href.startsWith('#')) {
         isRouterLink = true;
         token.tag = 'router-link';
         link[0] = 'to';
