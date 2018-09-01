@@ -4,6 +4,6 @@
     "target": "esnext",
     "module": "commonjs"
   },
-  "include": ["packages"],
+  "include": ["scripts", "packages"],
   "exclude": ["node_modules"]
 }

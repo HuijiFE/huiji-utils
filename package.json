@@ -9,7 +9,8 @@
     "packages/@void/*"
   ],
   "scripts": {
-    "ts": "ts-node -r tsconfig-paths/register -P tsconfig.scripts.json"
+    "ts": "ts-node -r tsconfig-paths/register -P tsconfig.scripts.json",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
