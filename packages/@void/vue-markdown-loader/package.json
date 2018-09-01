@@ -1,0 +1,23 @@
+{
+  "name": "@void/vue-markdown-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader for loading markdown files as vue single-file-components",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.json",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.json",
+    "test:unit": "jest --maxWorkers=4"
+  },
+  "dependencies": {
+    "markdown-it": "^8.4.2",
+    "markdown-it-container": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^0.0.5",
+    "@types/markdown-it-container": "^2.0.0"
+  }
+}

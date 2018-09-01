@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["scripthost", "esnext"],
+    "types": ["node", "jest"],
+    "typeRoots": ["./node_modules/@types"],
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": false,
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@void/*": ["packages/@void/*"]
+    }
+  },
+  "include": ["packages"],
+  "exclude": ["node_modules", "**/*.(spec|test).*"]
+}
