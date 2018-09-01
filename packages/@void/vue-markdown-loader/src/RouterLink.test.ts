@@ -16,11 +16,11 @@ function init(options?: PluginRouterLinkOptions): void {
   md.use(pluginRouterLink, options);
 }
 
-init();
-
 describe('MarkdownIt Plugin RouterLink', () => {
   test('Check module definition', () => {
+    expect(pluginRouterLink).toBeDefined();
     expect(typeof pluginRouterLink).toBe('function');
+    init();
   });
 
   test('Test empty link', () => {
