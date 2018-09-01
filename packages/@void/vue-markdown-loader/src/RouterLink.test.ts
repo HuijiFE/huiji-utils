@@ -18,7 +18,7 @@ function init(options?: PluginRouterLinkOptions): void {
 
 init();
 
-describe('RouterLinkPlugin', () => {
+describe('MarkdownIt Plugin RouterLink', () => {
   test('Check module definition', () => {
     expect(typeof pluginRouterLink).toBe('function');
   });
