@@ -1,9 +1,17 @@
 {
   "name": "@void/vue-markdown-loader",
   "version": "1.0.0",
-  "description": "A webpack loader for loading markdown files as vue single-file-components",
+  "description": "A webpack loader for loading markdown files as Vue Single-File Components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": "https://github.com/github:huijife/void-utils",
+  "keywords": [
+    "vue",
+    "webpack",
+    "vebpack-loader",
+    "markdown-it",
+    "markdown-it-plugin"
+  ],
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
   "scripts": {

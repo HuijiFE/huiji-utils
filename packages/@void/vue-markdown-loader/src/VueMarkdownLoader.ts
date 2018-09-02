@@ -21,6 +21,7 @@ export interface VueMarkdownLoaderOptions {
 }
 
 let md: MarkdownIt.MarkdownIt;
+const defaultOptions: VueMarkdownLoaderOptions = {};
 
 export function initMarkdownItInstance(
   options?: VueMarkdownLoaderOptions,
@@ -32,7 +33,7 @@ export function initMarkdownItInstance(
     anchorOptions,
     componentOptions,
     routerLinkOptions,
-  } = (options || {}) as VueMarkdownLoaderOptions;
+  } = options || defaultOptions;
 
   md = new MarkdownIt({
     html: true,
@@ -79,5 +80,5 @@ export function loadVueMarkdown(
 
 // tslint:disable-next-line:no-any
 export default function loaderFn(this: any, source: string): string {
-  return loadVueMarkdown(source, getOptions(this));
+  return loadVueMarkdown(source, getOptions(this as loader.LoaderContext));
 }
