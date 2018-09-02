@@ -1,9 +1,8 @@
 {
   "name": "@huiji/vue-cli-plugin-markdown",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "markdown plugin for vue-cli",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "index.js",
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "vue",
@@ -19,6 +18,7 @@
     "test:unit": "jest --maxWorkers=4"
   },
   "devDependencies": {
+    "@types/webpack-chain": "^4.8.1",
     "@vue/cli-service": "^3.0.1"
   },
   "dependencies": {

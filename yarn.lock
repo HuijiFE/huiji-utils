@@ -160,6 +160,12 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/webpack-chain@^4.8.1":
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/@types/webpack-chain/-/webpack-chain-4.8.1.tgz#b09a886ac0fc0dc20277c3ae221db6ebf4d30553"
+  dependencies:
+    "@types/webpack" "*"
+
 "@types/webpack@*", "@types/webpack@^4.4.11":
   version "4.4.11"
   resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.4.11.tgz#0ca832870d55c4e92498c01d22d00d02b0f62ae9"

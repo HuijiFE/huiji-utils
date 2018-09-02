@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "lib": ["scripthost", "esnext"],
     "types": ["node", "jest"],
     "typeRoots": ["./node_modules/@types"],
@@ -15,6 +15,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "allowSyntheticDefaultImports": false,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "rootDir": ".",
     "outDir": "dist",
     "declaration": true,
