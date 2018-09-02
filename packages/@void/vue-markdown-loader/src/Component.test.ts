@@ -139,4 +139,32 @@ describe('MarkdownIt Plugin Component', () => {
     init();
     expect(md.generateVueComponentData(src).styleBlocks).toStrictEqual(styleBlocks);
   });
+
+  test('Test empty html', () => {
+    init();
+    expect(
+      md.generateVueComponentData(`
+<script>
+export default {
+  data() {
+    return {
+      test: 'abc',
+    };
+  };
+};
+
+</script>
+
+<style lang="scss">
+$content-color: #333;
+
+.content {
+  color: $content-color;
+}
+</style>
+
+`).template,
+    ).toBe(`<article>
+</article>`);
+  });
 });
