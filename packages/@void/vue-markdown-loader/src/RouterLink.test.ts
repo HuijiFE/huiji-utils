@@ -58,6 +58,22 @@ describe('MarkdownIt Plugin RouterLink', () => {
     );
   });
 
+  test('Test external link with after', () => {
+    init({
+      externalAfter: '<fa-icon icon="external-link-alt"></fa-icon>',
+    });
+    expect(md.renderInline('[GitHub.com](https://github.com)')).toBe(
+      '<a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com<fa-icon icon="external-link-alt"></fa-icon></a>',
+    );
+  });
+
+  test('Test external link non-standard', () => {
+    init();
+    expect(md.renderInline('[GitHub.com]( https://github.com )')).toBe(
+      '<a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com</a>',
+    );
+  });
+
   test('Test router-link', () => {
     init();
     expect(md.renderInline('[Lear More](/api/router-link-plugin)')).toBe(
