@@ -1,8 +1,11 @@
 {
   "name": "@huiji/vue-cli-plugin-markdown",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "markdown plugin for vue-cli",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "vue",
@@ -11,12 +14,6 @@
   ],
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
-  "scripts": {
-    "clean:dist": "rimraf ./dist",
-    "build": "yarn clean:dist && tsc -p ./tsconfig.project.json",
-    "lint": "tslint -c ./tslint.project.json -p ./tsconfig.project.json",
-    "test:unit": "jest --maxWorkers=4"
-  },
   "devDependencies": {
     "@types/webpack-chain": "^4.8.1",
     "@vue/cli-service": "^3.0.1"

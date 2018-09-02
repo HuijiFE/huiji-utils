@@ -5,6 +5,6 @@ __tests__/
 *.test.*
 
 # Project config
-jest.confg.js
+jest.config.js
 tsconfig.project.json
 tslint.project.json

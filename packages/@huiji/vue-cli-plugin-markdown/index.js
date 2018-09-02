@@ -16,8 +16,8 @@ module.exports = (api, options) => {
     });
 
     webpackConfig.module
-      .rule('vue')
-      .test(/\.vue$/)
+      .rule('md')
+      .test(/\.md$/)
       // cache loader
       .use('cache-loader')
       .loader('cache-loader')

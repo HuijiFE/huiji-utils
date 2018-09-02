@@ -1,6 +1,6 @@
 {
   "name": "@huiji/vue-markdown-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A webpack loader for loading markdown files as Vue Single-File Components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
