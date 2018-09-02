@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/@void/*"
+    "packages/@huiji/*"
   ],
   "scripts": {
     "ts": "ts-node -r tsconfig-paths/register -P tsconfig.scripts.json",

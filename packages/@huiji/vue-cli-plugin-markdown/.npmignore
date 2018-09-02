@@ -1,0 +1,10 @@
+# Tests
+tests/
+__tests__/
+*.spec.*
+*.test.*
+
+# Project config
+jest.confg.js
+tsconfig.project.json
+tslint.project.json
