@@ -1,5 +1,5 @@
 {
-  "name": "@void/vue-markdown-loader",
+  "name": "@huiji/vue-markdown-loader",
   "version": "1.0.0",
   "description": "A webpack loader for loading markdown files as Vue Single-File Components",
   "main": "dist/index.js",
