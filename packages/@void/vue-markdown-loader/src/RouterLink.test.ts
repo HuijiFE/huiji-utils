@@ -1,11 +1,11 @@
 import * as MarkdownIt from 'markdown-it';
-import pluginRouterLink, {
+import routerLink, {
   PluginRouterLinkOptions,
 } from '@void/vue-markdown-loader/src/RouterLink';
 
 let md: MarkdownIt.MarkdownIt;
 
-function init(options?: PluginRouterLinkOptions): void {
+function init(options?: PluginRouterLinkOptions): MarkdownIt.MarkdownIt {
   md = new MarkdownIt({
     html: true,
     linkify: true,
@@ -13,13 +13,15 @@ function init(options?: PluginRouterLinkOptions): void {
     typographer: true,
   });
 
-  md.use(pluginRouterLink, options);
+  md.use(routerLink, options);
+
+  return md;
 }
 
 describe('MarkdownIt Plugin RouterLink', () => {
   test('Check module definition', () => {
-    expect(pluginRouterLink).toBeDefined();
-    expect(typeof pluginRouterLink).toBe('function');
+    expect(routerLink).toBeDefined();
+    expect(typeof routerLink).toBe('function');
     init();
   });
 

@@ -1,32 +1,32 @@
 import * as MarkdownIt from 'markdown-it';
-import pluginComponent, { PluginComponentOptions } from './Component';
+import component, { PluginComponentOptions } from './Component';
 import { VueMarkdownComponentData } from './Component';
 
 const scriptBlocks: string[] = [
   `<script>
 export default {
-data() {
-return {
-  test: '123',
-};
-},
+  data() {
+    return {
+      test: '123',
+    };
+  },
 };
 </script>`,
   `<script lang="ts">
 import Vue, { CreateElement, VNode } from 'vue';
 import {
-Component,
-Emit,
-Inject,
-Model,
-Prop,
-Provide,
-Watch,
+  Component,
+  Emit,
+  Inject,
+  Model,
+  Prop,
+  Provide,
+  Watch,
 } from 'vue-property-decorator';
 
 export default class MyComponent extends Vue {
-@Prop({ type: String })
-public readonly name!: string;
+  @Prop({ type: String })
+  public readonly name!: string;
 }
 
 </script>`,
@@ -75,13 +75,13 @@ function init(options?: PluginComponentOptions): void {
     typographer: true,
   });
 
-  md.use(pluginComponent, options);
+  md.use(component, options);
 }
 
 describe('MarkdownIt Plugin Component', () => {
   test('Check module definition', () => {
-    expect(pluginComponent).toBeDefined();
-    expect(typeof pluginComponent).toBe('function');
+    expect(component).toBeDefined();
+    expect(typeof component).toBe('function');
     init();
     expect(md).toHaveProperty('generateVueComponentData');
     expect(typeof md.generateVueComponentData).toBe('function');
