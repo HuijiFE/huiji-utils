@@ -1,7 +1,5 @@
 {
   "name": "huiji-utils",
-  "version": "1.0.0",
-  "main": "index.js",
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
   "private": true,
