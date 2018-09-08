@@ -1,0 +1,1 @@
+# @huiji-utils/vue-locale

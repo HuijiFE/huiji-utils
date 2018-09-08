@@ -1,0 +1,25 @@
+{
+  "name": "@huiji/vue-locale",
+  "version": "1.0.0",
+  "description": "A webpack loader for loading markdown files as Vue Single-File Components",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "vue",
+    "i18n",
+    "internationalization",
+    "localization"
+  ],
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.project.json",
+    "lint": "tslint -c ./tslint.project.json -p ./tsconfig.project.json",
+    "test:unit": "jest --maxWorkers=4"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.0"
+  }
+}

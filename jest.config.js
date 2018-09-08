@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   collectCoverage: true,
   coverageThreshold: {
@@ -12,7 +14,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  testMatch: ['**/(tests|__tests__)/**/*.ts|**/*.(spec|test).ts'],
+  testMatch: ['**/*.(spec|test).ts'],
   testURL: 'http://localhost',
   moduleDirectories: ['node_modules', 'packages'],
 };
