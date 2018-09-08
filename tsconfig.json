@@ -15,7 +15,6 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "allowSyntheticDefaultImports": false,
-    "allowJs": true,
     "resolveJsonModule": true,
     "rootDir": ".",
     "outDir": "dist",
