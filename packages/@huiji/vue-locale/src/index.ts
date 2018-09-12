@@ -53,6 +53,10 @@ export default class VueLocale {
   private readonly _vm!: Vue;
   // tslint:enable:variable-name
 
+  public get loading(): boolean {
+    return (this._vm as any)._data.$$loading;
+  }
+
   public get language(): string {
     return (this._vm as any)._data.$$language;
   }
@@ -63,13 +67,10 @@ export default class VueLocale {
   public get dict(): Record<string, string> {
     return (this._vm as any)._data.$$dict;
   }
-
   public set dict(value: Record<string, string>) {
-    if (process.env.NODE_ENV !== 'production') {
-      throw error(
-        'use VueLocale.selectLanguage() or reassign VueLocale.language to explicit replace VueLocale.dict.',
-      );
-    }
+    throw error(
+      'use VueLocale.selectLanguage() or reassign VueLocale.language to explicit replace VueLocale.dict.',
+    );
   }
 
   /**
@@ -85,6 +86,7 @@ export default class VueLocale {
     this._vm = new ($$Vue as typeof Vue)({
       data(): any {
         return {
+          $$loading: false,
           $$language: '',
           $$dict: {},
         };
@@ -96,16 +98,27 @@ export default class VueLocale {
    * select
    */
   public async selectLanguage(language: string): Promise<void> {
-    let probable: string;
-    const dict: Dict | AsyncDict | undefined =
-      this._dicts[(probable = language)] ||
-      (language.includes('-')
-        ? this._dicts[(probable = language.replace(/\-/, ''))] ||
-          this._dicts[(probable = language.split('-')[0])]
-        : undefined);
+    if (this.loading) {
+      return;
+    }
+
+    (this._vm as any)._data.$$loading = true;
+
+    let probable: string | undefined = language;
+    let dict: Dict | AsyncDict | undefined = this._dicts[probable];
+
+    if (!dict) {
+      const probables: string[] = [language.replace(/-/g, ''), language.split('-')[0]];
+      const languages: string[] = Object.keys(this._dicts);
+      probable = probables.find(p => languages.includes(p));
+      if (probable) {
+        dict = this._dicts[probable];
+      }
+    }
 
     if (!dict) {
       const dicts: string = Object.keys(this._dicts).join(', ');
+      (this._vm as any)._data.$$loading = false;
 
       throw error(`dict for language ${language} not found, installed dicts: ${dicts}.`);
     } else {
@@ -115,6 +128,7 @@ export default class VueLocale {
 
       (this._vm as any)._data.$$language = probable;
       (this._vm as any)._data.$$dict = clone;
+      (this._vm as any)._data.$$loading = false;
     }
   }
 }

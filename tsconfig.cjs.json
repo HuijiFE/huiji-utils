@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "target": "es2015",
-    "module": "commonjs"
+    "module": "commonjs",
+    "resolveJsonModule": true
   },
   "exclude": ["**/*.spec.*", "**/*.test.*"]
 }

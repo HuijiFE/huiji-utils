@@ -8,7 +8,9 @@
   ],
   "scripts": {
     "ts": "ts-node -r tsconfig-paths/register -P tsconfig.scripts.json",
-    "test": "jest"
+    "test": "jest",
+    "build:vue-locale": "yarn --cwd packages/@huiji/vue-locale build",
+    "build": "yarn build:vue-locale"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",

@@ -21,11 +21,8 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "baseUrl": ".",
-    "paths": {
-      "vue": ["vue/dist/vue.esm.js"]
-    }
+    "baseUrl": "."
   },
   "include": ["packages"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "packages/**/dist"]
 }

@@ -24,6 +24,9 @@ describe('Vue Plugin VueLocale', () => {
         zhCN: {
           message: '一则消息。',
         },
+        zh: {
+          message: '一则消息。',
+        },
       },
     });
 
@@ -99,6 +102,9 @@ describe('Vue Plugin VueLocale', () => {
     vm.$locale.language = 'zh-CN';
     expect(vm.$locale.language).toBe('zhCN');
     expect(vm.$locale.dict.message).toBe('一则消息。');
+
+    vm.$locale.language = 'zh-TW';
+    expect(vm.$locale.language).toBe('zh');
   });
 });
 
@@ -131,5 +137,14 @@ describe('Vue Plugin VueLocale Async', () => {
     await locale.selectLanguage('zh-CN');
     expect(vm.$locale.language).toBe('zh-CN');
     expect(vm.$locale.dict.message).toBe('一则消息。');
+
+    const all: Promise<void>[] = [];
+    expect(vm.$locale.loading).toBe(false);
+    all.push(locale.selectLanguage('en'));
+    expect(vm.$locale.loading).toBe(true);
+    all.push(locale.selectLanguage('zh-CN'));
+    await Promise.all(all);
+    expect(vm.$locale.loading).toBe(false);
+    expect(vm.$locale.language).toBe('en');
   });
 });
