@@ -1,7 +1,7 @@
 {
   "name": "@huiji/vue-locale",
-  "version": "1.1.0",
-  "description": "A webpack loader for loading markdown files as Vue Single-File Components",
+  "version": "1.1.1",
+  "description": "plugin localization for vue.js 2+",
   "main": "dist/common/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
