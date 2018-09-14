@@ -29,6 +29,9 @@ export interface VueLocaleOptions {
   dicts: Record<string, Dict | AsyncDict>;
 }
 
+/**
+ * Localization plugin for Vue.js 2+
+ */
 export default class VueLocale {
   public static install: PluginFunction<undefined> = $Vue => {
     if ($$Vue && $$Vue === $Vue) {

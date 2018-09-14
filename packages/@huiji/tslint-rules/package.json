@@ -1,0 +1,17 @@
+{
+  "name": "@huiji/tslint-rules",
+  "version": "1.0.0",
+  "description": "tslint rules for huiji projects",
+  "main": "tslint.json",
+  "sideEffects": false,
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "tslint",
+    "typescript"
+  ],
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tslint-microsoft-contrib": "^5.2.1"
+  }
+}

@@ -5,6 +5,7 @@
   "main": "dist/common/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
+  "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "vue",
@@ -17,8 +18,8 @@
   "scripts": {
     "clean:dist": "rimraf ./dist",
     "build": "yarn clean:dist && tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.esm.json",
-    "lint": "tslint -c ./tslint.project.json -p ./tsconfig.project.json",
-    "test:unit": "jest --maxWorkers=4"
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.esm.json",
+    "test": "jest --maxWorkers=4"
   },
   "peerDependencies": {
     "vue": "^2.5.0"

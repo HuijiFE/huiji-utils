@@ -6,6 +6,7 @@
   "files": [
     "index.js"
   ],
+  "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "vue",

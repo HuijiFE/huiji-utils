@@ -4,6 +4,7 @@
   "description": "A webpack loader for loading markdown files as Vue Single-File Components",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "vue",
@@ -17,8 +18,8 @@
   "scripts": {
     "clean:dist": "rimraf ./dist",
     "build": "yarn clean:dist && tsc -p ./tsconfig.project.json",
-    "lint": "tslint -c ./tslint.project.json -p ./tsconfig.project.json",
-    "test:unit": "jest --maxWorkers=4"
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.project.json",
+    "test": "jest --maxWorkers=4"
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
