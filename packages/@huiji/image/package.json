@@ -1,0 +1,29 @@
+{
+  "name": "@huiji/image",
+  "version": "1.0.1",
+  "description": "a image processing library",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "image",
+    "png",
+    "sprites"
+  ],
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "ts": "ts-node -r tsconfig-paths/register -P ../../../tsconfig.scripts.json",
+    "clean:dist": "rimraf ./dist",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.cjs.json",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.cjs.json",
+    "test": "jest --maxWorkers=4"
+  },
+  "dependencies": {
+    "pngjs": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/pngjs": "^3.3.2"
+  }
+}
