@@ -10,20 +10,9 @@ export interface SpritesOptions {
   context: string;
 
   /**
-   * The main CSS selector for the sprites
-   */
-  selector: string;
-
-  /**
    * Paths of source images
    */
   patterns: string[];
-
-  /**
-   * The function for resolving the path to CSS selector of a image file
-   * @param path the path of a image file
-   */
-  itemSelector?(path: string): string;
 
   /**
    * How many cells(images) in a row in the sprites grid.
@@ -36,11 +25,6 @@ export interface SpritesOptions {
   outputImage: string;
 
   /**
-   * The output path for saving result scss file.
-   */
-  outputScss: string;
-
-  /**
    * The width for a cell(image) in the sprites grid
    */
   itemWidth: number;
@@ -51,12 +35,6 @@ export interface SpritesOptions {
   itemHeight: number;
 }
 
-const itemSelectorDefault: (path: string) => string = path =>
-  path
-    .split(/\/|\\/)
-    .reduce((result, cur) => cur)
-    .replace(/\.png$/, '');
-
 /**
  * Generate CSS sprites image
  */
@@ -64,15 +42,10 @@ export default async function generateSprites({
   context,
   patterns,
   columns,
-
   itemWidth,
   itemHeight,
-  itemSelector = itemSelectorDefault,
   outputImage,
-
-  selector,
-  outputScss,
-}: SpritesOptions): Promise<void> {
+}: SpritesOptions): Promise<string[]> {
   const filePaths: string[] = await globby(
     patterns.map(
       pt =>
@@ -81,6 +54,7 @@ export default async function generateSprites({
           : ps.resolve(context, pt),
     ),
   );
+  filePaths.sort();
 
   const total: number = filePaths.length;
   const cols: number = columns && columns < total ? columns : total;
@@ -111,11 +85,10 @@ export default async function generateSprites({
     const col: number = index % cols;
     const row: number =
       Math.floor((index + 1) / cols) - 1 + ((index + 1) % cols > 0 ? 1 : 0);
-    console.info(index, row, col);
 
     for (let y: number = 0; y < itemHeight; y++) {
       for (let x: number = 0; x < itemWidth; x++) {
-        const offset: number = (itemWidth * y + x) << 2;
+        const offset: number = (png.width * y + x) << 2;
         const offsetDest: number =
           (destPng.width * (y + itemHeight * row) + (x + itemWidth * col)) << 2;
         for (let ch: number = 0; ch < 4; ch++) {
@@ -127,12 +100,14 @@ export default async function generateSprites({
 
   destPng.pack();
 
-  console.log('output', ps.resolve(context, outputImage));
-  return new Promise<void>((resolve, reject) => {
+  const outputImagePath: string = ps.resolve(context, outputImage);
+  console.log(total, outputImagePath);
+
+  return new Promise<string[]>((resolve, reject) => {
     fs.writeFile(
-      ps.resolve(context, outputImage),
+      ps.resolve(context, outputImagePath),
       PNG.sync.write(destPng),
-      error => (error ? reject(error) : resolve()),
+      error => (error ? reject(error) : resolve(filePaths)),
     );
   });
 }
