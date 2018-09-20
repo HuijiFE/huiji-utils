@@ -46,7 +46,7 @@ export default async function generateSprites({
   itemHeight,
   outputImage,
 }: SpritesOptions): Promise<string[]> {
-  const filePaths: string[] = await globby(
+  const filePaths1: string[] = await globby(
     patterns.map(
       pt =>
         pt.startsWith('!')
@@ -54,7 +54,35 @@ export default async function generateSprites({
           : ps.resolve(context, pt),
     ),
   );
-  filePaths.sort();
+  const filePaths2: string[] = await globby(
+    patterns.map(
+      pt =>
+        pt.startsWith('!')
+          ? `!${ps.resolve(context, pt.replace('!', ''))}`
+          : ps.resolve(context, pt),
+    ),
+  );
+
+  const filePaths: string[] = [...new Set([...filePaths1, ...filePaths2])];
+
+  filePaths.sort((a, b) => {
+    const lengthA: number = a.split(/\/|\\/).length;
+    const lengthB: number = b.split(/\/|\\/).length;
+
+    if (lengthA === lengthB) {
+      if (a < b) {
+        return -1;
+      } else if (a > b) {
+        return 1;
+      } else {
+        return 0;
+      }
+    } else {
+      return lengthA - lengthB;
+    }
+  });
+
+  filePaths.forEach(f => console.info(f));
 
   const total: number = filePaths.length;
   const cols: number = columns && columns < total ? columns : total;
@@ -68,7 +96,6 @@ export default async function generateSprites({
             if (error) {
               return reject(error);
             }
-            console.log('src', path);
             const png: PNG = PNG.sync.read(buffer);
             resolve(png);
           });
