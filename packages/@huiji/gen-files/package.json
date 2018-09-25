@@ -1,0 +1,27 @@
+{
+  "name": "@huiji/gen-files",
+  "version": "1.0.0",
+  "description": "search files by globby and generate source code",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.cjs.json",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.cjs.json -t verbose",
+    "test": "jest --maxWorkers=4"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "globby": "^8.0.1",
+    "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/globby": "^8.0.0",
+    "@types/mkdirp": "^0.5.2"
+  }
+}
