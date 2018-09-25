@@ -1,6 +1,6 @@
 {
   "name": "@huiji/tslint-rules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tslint rules for huiji projects",
   "main": "tslint.json",
   "sideEffects": false,

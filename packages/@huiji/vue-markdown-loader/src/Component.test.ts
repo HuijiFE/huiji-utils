@@ -1,6 +1,9 @@
-import * as MarkdownIt from 'markdown-it';
-import component, { PluginComponentOptions } from './Component';
-import { VueMarkdownComponentData } from './Component';
+/**
+ * Test
+ */
+
+import MarkdownIt from 'markdown-it';
+import component, { PluginComponentOptions, VueMarkdownComponentData } from './Component';
 
 const scriptBlocks: string[] = [
   `<script>

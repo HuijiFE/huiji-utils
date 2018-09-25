@@ -1,4 +1,8 @@
-import * as MarkdownIt from 'markdown-it';
+/**
+ * Test
+ */
+
+import MarkdownIt from 'markdown-it';
 import anchor, { AnchorOptions } from './Anchor';
 
 let md: MarkdownIt.MarkdownIt;

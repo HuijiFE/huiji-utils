@@ -1,4 +1,4 @@
-// tslint:disable:no-any
+// tslint:disable:no-any no-unsafe-any
 
 /**
  * Internationalization plugin for vue
@@ -64,6 +64,7 @@ export default class VueLocale {
     return (this._vm as any)._data.$$language;
   }
   public set language(value: string) {
+    // tslint:disable-next-line:no-floating-promises
     this.selectLanguage(value);
   }
 

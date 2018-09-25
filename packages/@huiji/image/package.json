@@ -17,7 +17,7 @@
     "ts": "ts-node -r tsconfig-paths/register -P ../../../tsconfig.scripts.json",
     "clean:dist": "rimraf ./dist",
     "build": "yarn clean:dist && tsc -p ./tsconfig.cjs.json",
-    "lint": "tslint -c ./tslint.json -p ./tsconfig.cjs.json",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.cjs.json -t verbose",
     "test": "jest --maxWorkers=4"
   },
   "dependencies": {

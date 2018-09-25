@@ -1,5 +1,9 @@
-import * as MarkdownIt from 'markdown-it';
-import * as anchor from 'markdown-it-anchor';
+/**
+ * Test
+ */
+
+import MarkdownIt from 'markdown-it';
+import anchor from 'markdown-it-anchor';
 import loaderFn, { initMarkdownItInstance, loadVueMarkdown } from './VueMarkdownLoader';
 
 const scriptBlocks: string[] = [
@@ -87,7 +91,7 @@ describe('Webpack Loader VueMarkdownLoader', () => {
 </article>
 </template>
 `);
-    expect((initMarkdownItInstance() as any) instanceof MarkdownIt).toBe(true);
+    expect(initMarkdownItInstance() instanceof MarkdownIt).toBe(true);
     expect(initMarkdownItInstance() === initMarkdownItInstance()).toBe(false);
   });
 

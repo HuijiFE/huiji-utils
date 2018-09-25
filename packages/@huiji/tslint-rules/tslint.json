@@ -88,6 +88,8 @@
     "no-relative-imports": false,
     "no-console": [true, "log"],
     "react-this-binding-issue": false,
-    "no-backbone-get-set-outside-model": false
+    "no-backbone-get-set-outside-model": false,
+    "mocha-no-side-effect-code": false,
+    "chai-vague-errors": false
   }
 }

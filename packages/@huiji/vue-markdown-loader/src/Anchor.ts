@@ -1,5 +1,5 @@
 import { MarkdownIt, Core, Token } from 'markdown-it';
-import * as anchor from 'markdown-it-anchor';
+import anchor from 'markdown-it-anchor';
 
 export interface AnchorInfo {
   slug: string;

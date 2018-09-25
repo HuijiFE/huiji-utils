@@ -1,7 +1,6 @@
-import { loader } from 'webpack';
 import { getOptions } from 'loader-utils';
 
-import * as MarkdownIt from 'markdown-it';
+import MarkdownIt from 'markdown-it';
 import component, { PluginComponentOptions, VueMarkdownComponentData } from './Component';
 import anchor, { AnchorOptions } from './Anchor';
 import routerLink, { PluginRouterLinkOptions } from './RouterLink';
@@ -78,7 +77,7 @@ export function loadVueMarkdown(
   return parts.join('\n');
 }
 
-// tslint:disable-next-line:no-any
+// tslint:disable:no-any no-unsafe-any
 export default function loaderFn(this: any, source: string): string {
-  return loadVueMarkdown(source, getOptions(this as loader.LoaderContext));
+  return loadVueMarkdown(source, getOptions(this));
 }
