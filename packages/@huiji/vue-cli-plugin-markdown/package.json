@@ -1,6 +1,6 @@
 {
   "name": "@huiji/vue-cli-plugin-markdown",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "markdown plugin for vue-cli",
   "main": "index.js",
   "files": [
@@ -20,6 +20,6 @@
     "@vue/cli-service": "^3.0.1"
   },
   "dependencies": {
-    "@huiji/vue-markdown-loader": "^1.0.0"
+    "@huiji/vue-markdown-loader": "^1.0.2"
   }
 }
