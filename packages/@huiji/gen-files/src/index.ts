@@ -5,7 +5,7 @@ import mkdirp from 'mkdirp';
 import chalk, { Chalk } from 'chalk';
 
 function log(color: Chalk, label: string, content: string): void {
-  console.info(`${color(` ${label} `).padEnd(20, ' ')} ${content}`);
+  console.info(`${color(` ${label} `)}${''.padEnd(16 - label.length, ' ')} ${content}`);
 }
 
 export interface FileInfo {
@@ -103,7 +103,7 @@ export async function genFiles(options: GenFilesOptions): Promise<void> {
     }));
 
   if (files.length === 0) {
-    return log(chalk.bgYellow.black, 'Related Files Not Found', options.output);
+    return log(chalk.bgYellow.black, 'No files', options.output);
   }
 
   if (options.body) {
