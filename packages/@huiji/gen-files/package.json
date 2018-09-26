@@ -1,6 +1,6 @@
 {
   "name": "@huiji/gen-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "search files by globby and generate source code",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

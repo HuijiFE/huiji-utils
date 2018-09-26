@@ -5,7 +5,7 @@ import mkdirp from 'mkdirp';
 import chalk, { Chalk } from 'chalk';
 
 function log(color: Chalk, label: string, content: string): void {
-  console.info(`${color(` ${label} `).padEnd(20)} ${content}`);
+  console.info(`${color(` ${label} `).padEnd(20, ' ')} ${content}`);
 }
 
 export interface FileInfo {
