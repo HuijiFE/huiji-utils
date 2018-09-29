@@ -1,7 +1,10 @@
 {
-  "name": "@huiji/gen-files",
-  "version": "1.0.2",
-  "description": "search files by globby and generate source code",
+  "name": "@huiji/shared-utils",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Huiji shared utils",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
