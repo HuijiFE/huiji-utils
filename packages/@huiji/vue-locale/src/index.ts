@@ -1,4 +1,4 @@
-// tslint:disable:no-any no-unsafe-any
+// tslint:disable:no-any no-unsafe-any no-reserved-keywords
 
 /**
  * Internationalization plugin for vue
@@ -6,10 +6,9 @@
 
 import Vue, { PluginFunction, ComponentOptions } from 'vue';
 
-export type Dict = Record<string, string>;
+export interface Dict extends Record<string, string> {}
 
-// tslint:disable-next-line:no-reserved-keywords
-export type AsyncDict = () => Promise<{ default: Dict }>;
+export type AsyncDict = () => Promise<Dict | { default: Dict }>;
 
 let $$Vue: typeof Vue | undefined;
 
@@ -26,6 +25,13 @@ declare module 'vue/types/vue' {
 }
 
 export interface VueLocaleOptions {
+  /**
+   * Cache the async dict or not, default: true
+   */
+  cache?: boolean;
+  /**
+   * The map of dicts.
+   */
   dicts: Record<string, Dict | AsyncDict>;
 }
 
@@ -50,6 +56,8 @@ export default class VueLocale {
       },
     });
   };
+
+  public cache!: boolean;
 
   // tslint:disable:variable-name
   private readonly _dicts!: Record<string, Dict | AsyncDict>;
@@ -86,6 +94,7 @@ export default class VueLocale {
       throw error('invalid options for create VueLocale instance.');
     }
 
+    this.cache = options.cache === undefined ? true : options.cache;
     this._dicts = options.dicts;
     this._vm = new ($$Vue as typeof Vue)({
       data(): any {
@@ -126,12 +135,20 @@ export default class VueLocale {
 
       throw error(`dict for language ${language} not found, installed dicts: ${dicts}.`);
     } else {
-      const clone: Dict = {
-        ...(typeof dict === 'function' ? (await dict()).default : dict),
-      };
+      if (typeof dict === 'function') {
+        let raw: Dict | { default: Dict } = await dict();
+        if ('default' in raw && typeof raw.default === 'object') {
+          raw = raw.default;
+        }
+        if (this.cache && probable) {
+          this._dicts[probable] = raw as Dict;
+        }
+        (this._vm as any)._data.$$dict = { ...raw };
+      } else {
+        (this._vm as any)._data.$$dict = { ...dict };
+      }
 
       (this._vm as any)._data.$$language = probable;
-      (this._vm as any)._data.$$dict = clone;
       (this._vm as any)._data.$$loading = false;
     }
   }

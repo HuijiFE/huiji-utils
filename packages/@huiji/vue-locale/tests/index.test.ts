@@ -1,3 +1,7 @@
+/**
+ * Test
+ */
+// tslint:disable:no-any
 import { createLocalVue, mount, shallowMount, Wrapper } from '@vue/test-utils';
 import VueLocale from '../src/index';
 import Vue from 'vue';
@@ -114,9 +118,15 @@ describe('Vue Plugin VueLocale Async', () => {
 
   test('Language Selecting', async () => {
     locale = new VueLocale({
+      cache: false,
       dicts: {
         en: async () => import('./en'),
         'zh-CN': async () => import('./zh-CN'),
+        'zh-CN-2': async () => {
+          const { default: dict } = await import('./zh-CN');
+
+          return dict;
+        },
       },
     });
 
@@ -130,14 +140,6 @@ describe('Vue Plugin VueLocale Async', () => {
       },
     ).vm;
 
-    await locale.selectLanguage('en');
-    expect(vm.$locale.language).toBe('en');
-    expect(vm.$locale.dict.message).toBe('A message.');
-
-    await locale.selectLanguage('zh-CN');
-    expect(vm.$locale.language).toBe('zh-CN');
-    expect(vm.$locale.dict.message).toBe('一则消息。');
-
     const all: Promise<void>[] = [];
     expect(vm.$locale.loading).toBe(false);
     all.push(locale.selectLanguage('en'));
@@ -146,5 +148,31 @@ describe('Vue Plugin VueLocale Async', () => {
     await Promise.all(all);
     expect(vm.$locale.loading).toBe(false);
     expect(vm.$locale.language).toBe('en');
+
+    await locale.selectLanguage('en');
+    expect(vm.$locale.language).toBe('en');
+    expect(vm.$locale.dict.message).toBe('A message.');
+
+    await locale.selectLanguage('zh-CN');
+    expect(vm.$locale.language).toBe('zh-CN');
+    expect(vm.$locale.dict.message).toBe('一则消息。');
+
+    await locale.selectLanguage('zh-CN-2');
+    expect(vm.$locale.language).toBe('zh-CN-2');
+    expect(vm.$locale.dict.message).toBe('一则消息。');
+
+    locale.cache = true;
+
+    await locale.selectLanguage('en');
+    expect(vm.$locale.language).toBe('en');
+    expect(vm.$locale.dict.message).toBe('A message.');
+
+    await locale.selectLanguage('zh-CN');
+    expect(vm.$locale.language).toBe('zh-CN');
+    expect(vm.$locale.dict.message).toBe('一则消息。');
+
+    await locale.selectLanguage('zh-CN-2');
+    expect(vm.$locale.language).toBe('zh-CN-2');
+    expect(vm.$locale.dict.message).toBe('一则消息。');
   });
 });
