@@ -1,14 +1,25 @@
 /**
  * Test
  */
-
-import { introAsync, rawIntroAsync } from './test-utils';
+import fs from 'fs';
+import { __IntrospectionBase, getIntrospection, commonCompare } from './introspection';
+import { gamelibEntry, rawIntroAsync } from '../test/test-utils';
 
 describe('introspection.ts', () => {
+  test('Compare', async () => {
+    const seeds: (string | null)[] = ['cd', 'be', 'xa', '_ds', '__a', 'a', 'be', '', ''];
+    expect(
+      seeds
+        .map<__IntrospectionBase>(s => ({ name: s }))
+        .sort((a, b) => commonCompare(a, b))
+        .map(i => i.name),
+    ).toMatchObject(seeds.sort());
+  });
+
   test('getIntrospection', async () => {
-    const [intro, rawIntro] = await Promise.all([introAsync, rawIntroAsync]);
-    expect(intro).toHaveProperty('queryType');
+    const intro = await getIntrospection(gamelibEntry);
+    fs.writeFileSync('.tmp/gl.intro.json', JSON.stringify(intro, undefined, '  '));
     expect(intro).toHaveProperty('types');
-    expect(intro).toMatchObject(rawIntro);
+    expect(intro).toHaveProperty('queryType');
   });
 });

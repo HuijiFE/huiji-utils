@@ -335,12 +335,22 @@ export enum __DirectiveLocation {
   INPUT_FIELD_DEFINITION = 'INPUT_FIELD_DEFINITION',
 }
 
+export interface __IntrospectionBase {
+  name: string | undefined | null;
+}
+
 // tslint:enable:class-name no-reserved-keywords
 
-interface SchemaResponse {
-  data: {
-    __schema: __Schema;
-  };
+const stringCompare = (a: string, b: string) => (a < b && -1) || (a > b && 1) || 0;
+
+export const commonCompare = (a: __IntrospectionBase, b: __IntrospectionBase) =>
+  stringCompare(a.name || '', b.name || '');
+
+export interface IntrospectionOptions {
+  /**
+   * Sorts members or interface in a `__Type` or not
+   */
+  sort?: boolean;
 }
 
 /**
@@ -350,8 +360,17 @@ interface SchemaResponse {
 export async function getIntrospection(
   entry: string,
   config?: AxiosRequestConfig,
+  { sort = true }: IntrospectionOptions = {},
 ): Promise<__Schema> {
-  const { data } = await axios.post<SchemaResponse>(
+  const {
+    data: {
+      data: { __schema: schema },
+    },
+  } = await axios.post<{
+    data: {
+      __schema: __Schema;
+    };
+  }>(
     entry,
     {
       query,
@@ -359,5 +378,23 @@ export async function getIntrospection(
     config,
   );
 
-  return data.data.__schema;
+  if (sort) {
+    sortSchema(schema);
+  }
+
+  return schema;
+}
+
+export function sortSchema(schema: __Schema): __Schema {
+  schema.types.sort(commonCompare);
+  schema.types.forEach(td => {
+    [td.fields, td.interfaces, td.possibleTypes, td.enumValues, td.inputFields].forEach(
+      (arr: __IntrospectionBase[] | null) => arr && arr.sort(commonCompare),
+    );
+    if (td.fields) {
+      td.fields.forEach(fd => fd.args.sort(commonCompare));
+    }
+  });
+
+  return schema;
 }

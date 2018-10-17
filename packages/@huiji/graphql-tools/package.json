@@ -19,11 +19,18 @@
     "clean:dist": "rimraf ./dist",
     "build": "yarn clean:dist && tsc -p ./tsconfig.esm.json && tsc -p ./tsconfig.cjs.json",
     "lint": "tslint -c ./tslint.json -p ./tsconfig.esm.json -t verbose",
-    "test": "jest --maxWorkers=4"
+    "schema:intro": "curl -H \"Authorization: bearer $PERSONAL_ACCESS_TOKEN_TEST\" https://api.github.com/graphql >> .tmp/gh.intro.json",
+    "schema:idl": "curl -H \"Authorization: bearer $PERSONAL_ACCESS_TOKEN_TEST\" -H \"Accept: application/vnd.github.v4.idl\" https://api.github.com/graphql >> .tmp/gh.idl.json",
+    "schema": "yarn schema:intro && yarn schema:idl",
+    "temp-dir": "rimraf .tmp && mkdirp .tmp",
+    "test:unit": "jest --maxWorkers=4",
+    "test": "yarn temp-dir && yarn schema && yarn test:unit"
   },
   "dependencies": {
+    "@types/prettier": "^1.13.2",
     "axios": "^0.18.0",
     "loader-utils": "^1.1.0",
+    "prettier": "^1.14.3",
     "tslib": "^1.9.3"
   },
   "devDependencies": {

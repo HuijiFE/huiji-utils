@@ -1,3 +1,5 @@
+import prettier, { Options as PrettierOptions } from 'prettier';
+import { defaultPrettierOptions } from '../prettier-options';
 import {
   __Schema,
   __Type,
@@ -18,60 +20,81 @@ const TYPE_KIND_KEYWORD_MAP: Record<__TypeKind, string> = {
   [__TypeKind.NON_NULL]: 'nonnull',
 };
 
+const BUILT_IN_SCALAR_TYPES: string[] = ['Int', 'Float', 'String', 'Boolean', 'ID'];
+
+export interface GraphQLSchemaOptions {
+  /**
+   * @default false
+   */
+  debug?: boolean;
+  /**
+   * @default false
+   */
+  outputRoot?: boolean;
+
+  prettierOptions?: PrettierOptions;
+}
+
 /**
- *
- * @param introspection the GraphQL introspection
+ * Generate GraphQL schema (IDL format) with introspection.
+ * @param schema the GraphQL introspection
  */
-export function generateSchema(introspection: __Schema, debug: boolean = false): string {
-  let types: __Type[];
+export function generateGraphQLSchema(
+  schema: __Schema,
+  { debug = false, outputRoot = false, prettierOptions = {} }: GraphQLSchemaOptions = {},
+): string {
+  let idl = '';
 
-  let schema = '';
-  if (debug) {
-    schema += 'schema {\n';
-    schema += `  query: ${introspection.queryType.name}\n`;
-    if (introspection.mutationType) {
-      schema += `  mutation: ${introspection.mutationType.name}\n`;
-    }
-    if (introspection.subscriptionType) {
-      schema += `  subscription: ${introspection.subscriptionType}\n`;
-    }
-    schema += '}\n\n';
-
-    types = introspection.types;
-  } else {
-    types = introspection.types.filter(
-      t => !(t.name as string).startsWith('__') && t.name !== 'Query',
-    );
+  if (outputRoot) {
+    idl += genRoot(schema);
   }
 
-  types.sort(({ name: a }, { name: b }) => {
-    a = a || '';
-    b = b || '';
-    if (a < b) {
-      return -1;
-    } else if (a > b) {
-      return 1;
-    }
+  const types: __Type[] = debug
+    ? schema.types
+    : schema.types.filter(t => !(t.name as string).startsWith('__'));
 
-    return 0;
-  });
-
-  schema += types
+  idl += types
     .map(td => genTypeDeclaration(td))
-    .filter(s => s !== '')
+    .filter(s => !!s)
     .join('\n\n');
 
-  schema += '\n';
+  idl += '\n';
 
-  return schema;
+  idl = prettier.format(idl, {
+    ...defaultPrettierOptions(),
+    ...prettierOptions,
+    parser: 'graphql',
+  });
+
+  return idl;
+}
+
+function genRoot(schema: __Schema): string {
+  let idl = `schema {\n  query: ${schema.queryType.name}\n`;
+  if (schema.mutationType) {
+    idl += `  mutation: ${schema.mutationType.name}\n`;
+  }
+  if (schema.subscriptionType) {
+    idl += `  subscription: ${schema.subscriptionType.name}\n`;
+  }
+  idl += '}\n\n';
+
+  return idl;
 }
 
 function genTypeDeclaration(td: __Type): string {
+  if (
+    td.kind === __TypeKind.SCALAR &&
+    BUILT_IN_SCALAR_TYPES.includes(td.name as string)
+  ) {
+    return '';
+  }
+
   const lines: string[] = [];
 
   lines.push(...genDescription(td.description));
 
-  let firstLine: string = `${TYPE_KIND_KEYWORD_MAP[td.kind] || 'unknown'} ${td.name}`;
+  let firstLine: string = `${TYPE_KIND_KEYWORD_MAP[td.kind]} ${td.name}`;
 
   if (td.interfaces && td.interfaces.length > 0) {
     firstLine += ` implements ${td.interfaces.map(t => t.name).join(' & ')}`;
@@ -81,9 +104,9 @@ function genTypeDeclaration(td: __Type): string {
   }
 
   const block: string[] = [
-    ...genFields(td.fields),
-    ...genFields(td.inputFields),
-    ...genEnumValues(td.enumValues),
+    ...genFieldOrValueArray(td.fields),
+    ...genFieldOrValueArray(td.inputFields),
+    ...genFieldOrValueArray(td.enumValues),
   ];
 
   if (block.length > 0) {
@@ -99,41 +122,28 @@ function genTypeDeclaration(td: __Type): string {
 }
 
 function genDescription(description: string | null | undefined): string[] {
-  return description ? [...description.split(/[\n\r]/).map(l => `# ${l.trim()}`)] : [];
-}
-
-function genFields(fileds: (__Field | __InputValue)[] | null | undefined): string[] {
-  return fileds && fileds.length > 0
-    ? fileds.map(fd => genFieldOrValue(fd)).reduce<string[]>((result, cur) => {
-        result.push(...cur);
-
-        return result;
-      }, [])
+  return description
+    ? [
+        ...description
+          .trim()
+          .split(/[\n\r]/)
+          .map(l => `# ${l.trim()}`),
+      ]
     : [];
 }
 
-function genArgs(args: __InputValue[] | null | undefined): string[] {
-  return args && args.length > 0
-    ? args.map(a => genFieldOrValue(a)).reduce<string[]>((result, cur) => {
-        result.push(...cur);
-
-        return result;
-      }, [])
-    : [];
-}
-
-function genEnumValues(enumValues: __EnumValue[] | null | undefined): string[] {
-  return enumValues && enumValues.length > 0
-    ? enumValues.map(e => genFieldOrValue(e)).reduce<string[]>((result, cur) => {
-        result.push(...cur);
-
-        return result;
-      }, [])
+function genFieldOrValueArray(
+  arr: (__Field | __InputValue | __EnumValue)[] | null | undefined,
+): string[] {
+  return arr && arr.length > 0
+    ? arr
+        .map(e => genFieldOrValue(e))
+        .reduce<string[]>((result, cur) => result.concat(cur), [])
     : [];
 }
 
 function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
-  const args: string[] = 'args' in fd ? genArgs(fd.args) : [];
+  const args: string[] = 'args' in fd ? genFieldOrValueArray(fd.args) : [];
 
   let firstLine: string = fd.name;
   let lastLine: string = '';
@@ -149,7 +159,11 @@ function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
   }
 
   if ('defaultValue' in fd && fd.defaultValue) {
-    lastLine += ` = ${fd.defaultValue}`;
+    let defaultValue = fd.defaultValue;
+    if (isEnum(fd.type)) {
+      defaultValue = defaultValue.replace(/"/g, '');
+    }
+    lastLine += ` = ${defaultValue}`;
   }
 
   if ('isDeprecated' in fd && fd.isDeprecated) {
@@ -162,18 +176,18 @@ function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
   ).map(l => `  ${l}`);
 }
 
-function genType(td: __Type | null | undefined): string {
-  if (!td) {
-    return '';
-  }
-
+function genType(td: __Type): string {
   switch (td.kind) {
     case __TypeKind.LIST:
-      return `[${genType(td.ofType)}]`;
+      return `[${genType(td.ofType as __Type)}]`;
     case __TypeKind.NON_NULL:
-      return `${genType(td.ofType)}!`;
+      return `${genType(td.ofType as __Type)}!`;
 
     default:
-      return td.name || '';
+      return td.name as string;
   }
+}
+
+function isEnum(td: __Type | null | undefined): boolean {
+  return !!td && (td.kind === __TypeKind.ENUM || (!!td.ofType && isEnum(td.ofType)));
 }
