@@ -96,13 +96,12 @@ export function generateTypeScriptDeclaration(
     types = hoistScalarTypes(types);
   }
 
+  const scalarsMap: Record<string, string> = {
+    ...BUILT_IN_SCALAR_TYPE_MAP,
+    ...customScalars,
+  };
   idl += types
-    .map(td =>
-      genTypeDeclaration(td, partial, {
-        ...BUILT_IN_SCALAR_TYPE_MAP,
-        ...customScalars,
-      }),
-    )
+    .map(td => genTypeDeclaration(td, partial, scalarsMap))
     .filter(s => !!s)
     .join('\n\n');
 
@@ -146,7 +145,7 @@ function genTypeDeclaration(
     firstLine += ` = ${td.possibleTypes.map(t => t.name).join(' | ')}`;
   }
   if (td.kind === __TypeKind.SCALAR) {
-    firstLine += ` = ${BUILT_IN_SCALAR_TYPE_MAP[td.name as string] || 'never'}`;
+    firstLine += ` = ${customScalarTypes[td.name as string] || 'never'}`;
   }
 
   const block: string[] = [

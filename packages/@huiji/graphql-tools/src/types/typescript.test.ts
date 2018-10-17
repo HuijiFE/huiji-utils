@@ -15,6 +15,13 @@ import prettier from 'prettier';
 
 const entry: string = 'https://graphql.xy.huijitrans.com/graphql';
 
+const customScalars: Record<string, string> = {
+  Date: 'string',
+  DateTime: 'string',
+  HTML: 'string',
+  URI: 'string',
+};
+
 describe('types/graphql.ts', () => {
   test('generateSchema', async () => {
     const intro = await getIntrospection(gamelibEntry);
@@ -27,8 +34,12 @@ describe('types/graphql.ts', () => {
 
   test('generateSchema GitHub', async () => {
     const intro = await rawIntroAsync;
-    const schema = generateTypeScriptDeclaration(intro, { outputRoot: false });
+    const schema = generateTypeScriptDeclaration(intro, {
+      outputRoot: false,
+      customScalars,
+    });
 
+    expect(schema.includes('export type Date = string;')).toBe(true);
     expect(typeof schema).toBe('string');
 
     fs.writeFileSync('.tmp/gh.d.ts', schema);
@@ -51,6 +62,7 @@ describe('types/graphql.ts', () => {
       debug: true,
       outputRoot: true,
       hoistScalars: false,
+      customScalars,
     });
 
     fs.writeFileSync('.tmp/gh.debug.d.ts', schema);
