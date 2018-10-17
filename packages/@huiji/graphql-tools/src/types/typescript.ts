@@ -8,7 +8,12 @@ import {
   __InputValue,
   __EnumValue,
 } from '../introspection';
-import { eliminateIntrospectionType, isEnum, isNonNull } from '../utils';
+import {
+  eliminateIntrospectionType,
+  isEnum,
+  isNonNull,
+  hoistScalarTypes,
+} from '../utils';
 
 const TYPE_KIND_KEYWORD_MAP: Record<__TypeKind, string> = {
   [__TypeKind.SCALAR]: 'type',
@@ -52,8 +57,12 @@ export interface TypeScriptDeclarationOptions {
    * @default true
    */
   partial?: boolean;
+  /**
+   * @default true
+   */
+  hoistScalars?: boolean;
 
-  customScalarTypes?: Record<string, string>;
+  customScalars?: Record<string, string>;
 
   prettierOptions?: PrettierOptions;
 }
@@ -68,7 +77,8 @@ export function generateTypeScriptDeclaration(
     debug = false,
     outputRoot = true,
     partial = true,
-    customScalarTypes = {},
+    hoistScalars = true,
+    customScalars = {},
     prettierOptions = {},
   }: TypeScriptDeclarationOptions = {},
 ): string {
@@ -78,15 +88,19 @@ export function generateTypeScriptDeclaration(
     idl += genRoot(schema);
   }
 
-  const types: __Type[] = debug
+  let types: __Type[] = debug
     ? schema.types
     : schema.types.filter(eliminateIntrospectionType);
+
+  if (hoistScalars) {
+    types = hoistScalarTypes(types);
+  }
 
   idl += types
     .map(td =>
       genTypeDeclaration(td, partial, {
         ...BUILT_IN_SCALAR_TYPE_MAP,
-        ...customScalarTypes,
+        ...customScalars,
       }),
     )
     .filter(s => !!s)

@@ -39,6 +39,7 @@ describe('types/graphql.ts', () => {
     const schema = generateTypeScriptDeclaration(intro, {
       debug: true,
       outputRoot: true,
+      hoistScalars: false,
     });
 
     fs.writeFileSync('.tmp/gl.debug.d.ts', schema);
@@ -49,6 +50,7 @@ describe('types/graphql.ts', () => {
     const schema = generateTypeScriptDeclaration(intro, {
       debug: true,
       outputRoot: true,
+      hoistScalars: false,
     });
 
     fs.writeFileSync('.tmp/gh.debug.d.ts', schema);
