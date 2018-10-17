@@ -29,7 +29,7 @@ describe('types/graphql.ts', () => {
       ...defaultPrettierOptions(),
       parser: 'graphql',
     });
-    const genSchema = generateGraphQLSchema(rawIntro);
+    const genSchema = generateGraphQLSchema(rawIntro, { outputRoot: false });
 
     expect(typeof genSchema).toBe('string');
 

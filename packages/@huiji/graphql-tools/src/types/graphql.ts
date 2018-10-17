@@ -28,7 +28,7 @@ export interface GraphQLSchemaOptions {
    */
   debug?: boolean;
   /**
-   * @default false
+   * @default true
    */
   outputRoot?: boolean;
 
@@ -41,7 +41,7 @@ export interface GraphQLSchemaOptions {
  */
 export function generateGraphQLSchema(
   schema: __Schema,
-  { debug = false, outputRoot = false, prettierOptions = {} }: GraphQLSchemaOptions = {},
+  { debug = false, outputRoot = true, prettierOptions = {} }: GraphQLSchemaOptions = {},
 ): string {
   let idl = '';
 
