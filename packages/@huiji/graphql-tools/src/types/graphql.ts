@@ -8,6 +8,7 @@ import {
   __InputValue,
   __EnumValue,
 } from '../introspection';
+import { eliminateIntrospectionType, isEnum } from '../utils';
 
 const TYPE_KIND_KEYWORD_MAP: Record<__TypeKind, string> = {
   [__TypeKind.SCALAR]: 'scalar',
@@ -51,7 +52,7 @@ export function generateGraphQLSchema(
 
   const types: __Type[] = debug
     ? schema.types
-    : schema.types.filter(t => !(t.name as string).startsWith('__'));
+    : schema.types.filter(eliminateIntrospectionType);
 
   idl += types
     .map(td => genTypeDeclaration(td))
@@ -127,7 +128,7 @@ function genDescription(description: string | null | undefined): string[] {
         ...description
           .trim()
           .split(/[\n\r]/)
-          .map(l => `# ${l.trim()}`),
+          .map(l => `# ${l}`),
       ]
     : [];
 }
@@ -143,19 +144,19 @@ function genFieldOrValueArray(
 }
 
 function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
-  const args: string[] = 'args' in fd ? genFieldOrValueArray(fd.args) : [];
-
   let firstLine: string = fd.name;
   let lastLine: string = '';
 
+  const args: string[] = 'args' in fd ? genFieldOrValueArray(fd.args) : [];
   if (args.length > 0) {
     args.pop();
     firstLine += '(';
     lastLine += ')';
   }
 
-  if ('type' in fd) {
-    lastLine += `: ${genType(fd.type)}`;
+  const typeName = 'type' in fd ? genType(fd.type) : undefined;
+  if (typeName) {
+    lastLine += `: ${typeName}`;
   }
 
   if ('defaultValue' in fd && fd.defaultValue) {
@@ -186,8 +187,4 @@ function genType(td: __Type): string {
     default:
       return td.name as string;
   }
-}
-
-function isEnum(td: __Type | null | undefined): boolean {
-  return !!td && (td.kind === __TypeKind.ENUM || (!!td.ofType && isEnum(td.ofType)));
 }

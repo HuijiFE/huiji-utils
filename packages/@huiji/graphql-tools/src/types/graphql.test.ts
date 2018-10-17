@@ -21,6 +21,8 @@ describe('types/graphql.ts', () => {
     const schema = generateGraphQLSchema(intro);
     expect(typeof schema).toBe('string');
     expect(schema.split('\n').length > 20).toBe(true);
+
+    fs.writeFileSync('.tmp/gl.gql', schema);
   });
 
   test('generateSchema GitHub', async () => {
@@ -56,6 +58,7 @@ describe('types/graphql.ts', () => {
       debug: true,
       outputRoot: true,
     });
+
     fs.writeFileSync('.tmp/gl.debug.gql', genSchema);
   });
 
@@ -67,6 +70,7 @@ describe('types/graphql.ts', () => {
       debug: true,
       outputRoot: true,
     });
+
     fs.writeFileSync('.tmp/gh.debug.gql', genSchema);
   });
 });
