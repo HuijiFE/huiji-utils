@@ -185,7 +185,11 @@ function genFieldOrValue(
 ): string[] {
   let text: string = mb.name;
 
-  let description = (mb.description || '').trim();
+  let description = (mb.description || '')
+    .trim()
+    .split(/[\n\r]/)
+    .map(l => l.trim())
+    .join('\n');
 
   if (category === 'fields' || category === 'inputFields') {
     const fd = mb as __Field | __InputValue;
@@ -240,7 +244,7 @@ function generateFieldWithArgsComment(
         ...a.description
           .trim()
           .split(/[\n\r]/)
-          .map(l => `  // ${l}`),
+          .map(l => `  // ${l.trim()}`),
       );
     }
     argsLines.push(

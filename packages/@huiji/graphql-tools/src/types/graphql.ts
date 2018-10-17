@@ -128,7 +128,7 @@ function genDescription(description: string | null | undefined): string[] {
         ...description
           .trim()
           .split(/[\n\r]/)
-          .map(l => `# ${l}`),
+          .map(l => `# ${l.trim()}`),
       ]
     : [];
 }
