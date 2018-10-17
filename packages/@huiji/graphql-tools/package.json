@@ -1,5 +1,5 @@
 {
-  "name": "@huiji/graphql-loader",
+  "name": "@huiji/graphql-tools",
   "version": "0.1.1",
   "publishConfig": {
     "access": "public"

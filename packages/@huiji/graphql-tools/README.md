@@ -11,7 +11,7 @@
 
 ```typescript
 import fs from 'fs';
-import { getIntrospection, generateGraphQLSchema } from '@huiji/graphql-loader';
+import { getIntrospection, generateGraphQLSchema } from '@huiji/graphql-tools';
 
 (async () => {
   const intro = await getIntrospection('https://graphql.xy.huijitrans.com/graphql');
