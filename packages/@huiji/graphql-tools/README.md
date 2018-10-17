@@ -1,73 +1,46 @@
-# vue-markdown-loader
+# graphql-tools
 
-> A webpack loader for loading markdown files as Vue Single-File Components,
-> based on [MarkdownIt](https://github.com/markdown-it/markdown-it)
+> A tool kit to generate schema for GraphQL and type declaration for other languages.
 
-## Features
+## Present Supports
 
-- supports all `<script>` and `<style>` types of Vue Single-File Components
-- auto convert internal links to Vue `<router-link>`
-- customize MarkdownIt options and additional plugins
-- insert anchor to headings (base on markdown-it-anchor)
-- custom container (base on markdown-it-container) **TODO**
-- front matter **TODO**
-- highlighting **TODO**
+- GraphQL Schema (IDL format)
+- TypeScript Declaration
 
 ## Usage
 
-```bash
-npm i -D @void/vue-markdown-loader
+```typescript
+import fs from 'fs';
+import { getIntrospection, generateGraphQLSchema } from '@huiji/graphql-loader';
 
-# or use yarn
-yarn add -D @void/vue-markdown-loader
-```
+(async () => {
+  const intro = await getIntrospection('https://graphql.xy.huijitrans.com/graphql');
 
-### webpack
+  const schema = generateGraphQLSchema(intro);
+  fs.writeFileSync('.tmp/gamelib.gql', schema);
 
-```js
-// webpack.config.js
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+  const declaration = generateTypeScriptDeclaration(intro);
+  fs.writeFileSync('.tmp/gamelib.d.ts', schema);
+})();
 
-module.exports = {
-  resolve: {
-    extensions: ['.js', '.jsx', '.vue', '.json', '.md'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader',
-          },
-          {
-            loader: '@void/vue-markdown-loader',
-          },
-        ],
-      },
-    ],
-  },
-  plugins: [new VueLoaderPlugin()],
-};
-```
+(async () => {
+  const intro = await getIntrospection('https://api.github.com/graphql', {
+    headers: {
+      Authorization: `bearer ${process.env.PERSONAL_ACCESS_TOKEN_TEST}`,
+    },
+  });
 
-### vue-cli 3.0
+  const schema = generateGraphQLSchema(intro);
+  fs.writeFileSync('.tmp/github.gql', schema);
 
-```js
-// vue.config.js
-module.exports = {
-  chainWebpack: config => {
-    config.resolve.extensions.merge(['.md']);
-
-    config.module
-      .rule('md')
-      .test(/\.md$/)
-      .use('vue-loader')
-      .loader('vue-loader')
-      .end()
-      .use('@void/vue-markdown-loader')
-      .loader('@void/vue-markdown-loader')
-      .end();
-  },
-};
+  const declaration = generateTypeScriptDeclaration(intro, {
+    customScalars: {
+      Date: 'string',
+      DateTime: 'string',
+      HTML: 'string',
+      URI: 'string',
+    },
+  });
+  fs.writeFileSync('.tmp/github.d.ts', schema);
+})();
 ```

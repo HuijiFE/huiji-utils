@@ -1,10 +1,10 @@
 {
   "name": "@huiji/graphql-loader",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "publishConfig": {
     "access": "public"
   },
-  "description": "A webpack loader for loading grapqhql query file as plain text",
+  "description": "A tool kit to generate schema for GraphQL and type declaration for other languages.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
