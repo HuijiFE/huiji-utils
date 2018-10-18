@@ -8,7 +8,7 @@ import {
   __InputValue,
   __EnumValue,
 } from '../introspection';
-import { eliminateIntrospectionType, isEnum, hoistScalarTypes } from '../utils';
+import { eliminateIntrospectionType, isEnum } from '../utils';
 
 const TYPE_KIND_KEYWORD_MAP: Record<__TypeKind, string> = {
   [__TypeKind.SCALAR]: 'scalar',
@@ -32,10 +32,6 @@ export interface GraphQLSchemaOptions {
    * @default true
    */
   outputRoot?: boolean;
-  /**
-   * @default true
-   */
-  hoistScalars?: boolean;
 
   prettierOptions?: PrettierOptions;
 }
@@ -46,12 +42,7 @@ export interface GraphQLSchemaOptions {
  */
 export function generateGraphQLSchema(
   schema: __Schema,
-  {
-    debug = false,
-    outputRoot = true,
-    hoistScalars = true,
-    prettierOptions = {},
-  }: GraphQLSchemaOptions = {},
+  { debug = false, outputRoot = true, prettierOptions = {} }: GraphQLSchemaOptions = {},
 ): string {
   let idl = '';
 
@@ -59,13 +50,9 @@ export function generateGraphQLSchema(
     idl += genRoot(schema);
   }
 
-  let types: __Type[] = debug
+  const types: __Type[] = debug
     ? schema.types
     : schema.types.filter(eliminateIntrospectionType);
-
-  if (hoistScalars) {
-    types = hoistScalarTypes(types);
-  }
 
   idl += types
     .map(td => genTypeDeclaration(td))

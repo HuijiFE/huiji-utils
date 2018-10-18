@@ -415,16 +415,21 @@ export interface IntrospectionOptions {
    * Sorts members or interface in a `__Type` or not
    */
   sort?: boolean;
+  /**
+   * Hoists the scalar types and query, mutation subscription types.
+   * @default true
+   */
+  hoist?: boolean;
 }
 
 /**
- * Get GraphQL introspection
+ * Get GraphQL schema (introspection format)
  * @param entry the url of GraphQL API entry
  */
 export async function getIntrospection(
   entry: string,
   config?: AxiosRequestConfig,
-  { sort = true }: IntrospectionOptions = {},
+  { sort = true, hoist = true }: IntrospectionOptions = {},
 ): Promise<__Schema> {
   const {
     data: {
@@ -443,13 +448,20 @@ export async function getIntrospection(
   );
 
   if (sort) {
-    sortSchema(schema);
+    sortSchemaTypes(schema);
+  }
+
+  if (hoist) {
+    hoistSchemaTypes(schema);
   }
 
   return schema;
 }
 
-export function sortSchema(schema: __Schema): __Schema {
+/**
+ * Sorts the types in schema by name
+ */
+export function sortSchemaTypes(schema: __Schema): __Schema {
   schema.types.sort(commonCompare);
   schema.types.forEach(td => {
     [td.fields, td.interfaces, td.possibleTypes, td.enumValues, td.inputFields].forEach(
@@ -457,6 +469,28 @@ export function sortSchema(schema: __Schema): __Schema {
     );
     if (td.fields) {
       td.fields.forEach(fd => fd.args.sort(commonCompare));
+    }
+  });
+
+  return schema;
+}
+
+/**
+ * Hoists scalar types and the types for query, mutation and subscription
+ */
+export function hoistSchemaTypes(schema: __Schema): __Schema {
+  schema.types = [
+    ...schema.types.filter(td => td.kind === __TypeKind.SCALAR),
+    ...schema.types.filter(td => td.kind !== __TypeKind.SCALAR),
+  ];
+
+  [schema.subscriptionType, schema.mutationType, schema.queryType].forEach(sign => {
+    if (sign && sign.name) {
+      const index = schema.types.findIndex(td => td.name === sign.name);
+      if (index > 0) {
+        const [master] = schema.types.splice(index, 1);
+        schema.types.unshift(master);
+      }
     }
   });
 

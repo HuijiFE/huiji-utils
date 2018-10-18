@@ -1,9 +1,4 @@
-import {
-  __Schema,
-  __IntrospectionBase,
-  commonCompare,
-  sortSchema,
-} from '../src/introspection';
+import { __Schema, __IntrospectionBase, sortSchemaTypes } from '../src/introspection';
 import fs from 'fs';
 
 jest.setTimeout(300000);
@@ -23,7 +18,7 @@ export const rawIntroAsync = new Promise<__Schema>((resolve, reject) => {
   const schema: __Schema = JSON.parse(fs.readFileSync('.tmp/gh.intro.json', 'utf-8')).data
     .__schema;
 
-  sortSchema(schema);
+  sortSchemaTypes(schema);
 
   resolve(schema);
 });

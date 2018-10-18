@@ -33,7 +33,6 @@ describe('types/graphql.ts', () => {
     });
     const genSchema = generateGraphQLSchema(rawIntro, {
       outputRoot: false,
-      hoistScalars: false,
     });
 
     expect(typeof genSchema).toBe('string');
@@ -56,7 +55,10 @@ describe('types/graphql.ts', () => {
   });
 
   test('generateSchema GameLib debug', async () => {
-    const rawIntro = await getIntrospection(gamelibEntry, undefined, { sort: false });
+    const rawIntro = await getIntrospection(gamelibEntry, undefined, {
+      sort: false,
+      hoist: false,
+    });
     const genSchema = generateGraphQLSchema(rawIntro, {
       debug: true,
       outputRoot: true,

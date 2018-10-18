@@ -11,8 +11,3 @@ export const isEnum = (td: __Type | null | undefined): boolean =>
 
 export const isNonNull = (td: __Type | null | undefined): boolean =>
   !!td && td.kind === __TypeKind.NON_NULL;
-
-export const hoistScalarTypes = (types: __Type[]): __Type[] => [
-  ...types.filter(td => td.kind === __TypeKind.SCALAR),
-  ...types.filter(td => td.kind !== __TypeKind.SCALAR),
-];
