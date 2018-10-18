@@ -72,7 +72,8 @@ export function generateTypeScriptDeclaration(
     prettierOptions = {},
   }: TypeScriptDeclarationOptions = {},
 ): string {
-  let idl = '';
+  let idl = genDescription(schema.__info, true).join('\n');
+  idl += '\n\n';
 
   if (outputRoot) {
     idl += genRoot(schema);
@@ -152,16 +153,24 @@ function genTypeDeclaration(
   return lines.join('\n');
 }
 
-function genDescription(description: string | null | undefined): string[] {
+function genDescription(
+  description: string | null | undefined,
+  line?: boolean,
+): string[] {
   return description
-    ? [
-        '/**',
-        ...description
+    ? line
+      ? description
           .trim()
           .split(/[\n\r]/)
-          .map(l => ` * ${l}`),
-        ' */',
-      ]
+          .map(l => `// ${l}`)
+      : [
+          '/**',
+          ...description
+            .trim()
+            .split(/[\n\r]/)
+            .map(l => ` * ${l}`),
+          ' */',
+        ]
     : [];
 }
 

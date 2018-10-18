@@ -44,7 +44,8 @@ export function generateGraphQLSchema(
   schema: __Schema,
   { debug = false, outputRoot = true, prettierOptions = {} }: GraphQLSchemaOptions = {},
 ): string {
-  let idl = '';
+  let idl = genDescription(schema.__info).join('\n');
+  idl += '\n\n';
 
   if (outputRoot) {
     idl += genRoot(schema);

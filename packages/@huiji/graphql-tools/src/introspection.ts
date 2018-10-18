@@ -134,6 +134,8 @@ export interface __Schema {
    * A list of all types supported by this server.
    */
   types: (__Type)[];
+
+  __info: string;
 }
 
 /**
@@ -454,6 +456,10 @@ export async function getIntrospection(
   if (hoist) {
     hoistSchemaTypes(schema);
   }
+
+  schema.__info = `entry: ${entry}
+timestamp: ${new Date().toISOString()}
+----------------------------------------------------------------`;
 
   return schema;
 }
