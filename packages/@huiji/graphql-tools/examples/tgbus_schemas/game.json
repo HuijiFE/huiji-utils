@@ -1,0 +1,5915 @@
+{
+  "directives": [
+    {
+      "args": [
+        {
+          "defaultValue": null,
+          "description": "",
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "description": "Marks an element of a GraphQL schema as no longer supported.",
+      "locations": [
+        "FIELD_DEFINITION",
+        "ENUM_VALUE"
+      ],
+      "name": "game"
+    }
+  ],
+  "mutationType": null,
+  "queryType": {
+    "name": "query"
+  },
+  "subscriptionType": null,
+  "types": [
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "collection",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "collections",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "count_type",
+          "isDeprecated": false,
+          "name": "count",
+          "type": {
+            "kind": "OBJECT",
+            "name": "counttype",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "开发方",
+          "isDeprecated": false,
+          "name": "developer",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:weight direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "开发方",
+          "isDeprecated": false,
+          "name": "developers",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "\"map[themes:-1 genres:-1 game_modes:-1 player_perspectives:-1 game_engines:-1 category:-1 platform:-1]\"",
+              "description": "筛选条件",
+              "name": "filters",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "filter",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"\"",
+              "description": "query keywords",
+              "name": "query",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "GAME",
+              "name": "type",
+              "type": {
+                "kind": "ENUM",
+                "name": "itemType",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "搜索",
+          "isDeprecated": false,
+          "name": "esearch",
+          "type": {
+            "kind": "OBJECT",
+            "name": "essearch",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "query",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "搜索输入提示",
+          "isDeprecated": false,
+          "name": "essearch_prompt",
+          "type": {
+            "kind": "OBJECT",
+            "name": "inputprompt",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "世界观",
+          "isDeprecated": false,
+          "name": "franchise",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "franchises",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "id",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏",
+          "isDeprecated": false,
+          "name": "game",
+          "type": {
+            "kind": "OBJECT",
+            "name": "game",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "引擎",
+          "isDeprecated": false,
+          "name": "game_engine",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[direction:1 field:weight]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "引擎集合",
+          "isDeprecated": false,
+          "name": "game_engines",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "id集合",
+              "name": "ids",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏列表",
+          "isDeprecated": false,
+          "name": "game_list",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏模式",
+          "isDeprecated": false,
+          "name": "game_mode",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[direction:1 field:weight]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏模式集合",
+          "isDeprecated": false,
+          "name": "game_modes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "0",
+              "description": "begin_time",
+              "name": "begin_time",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "end_time",
+              "name": "end_time",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[platform: genres: interface_lang:]\"",
+              "description": "筛选条件",
+              "name": "filters",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "gamesFilter",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:first_release_date direction:0]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏集合",
+          "isDeprecated": false,
+          "name": "games",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "品类",
+          "isDeprecated": false,
+          "name": "genre",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:weight direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "品类集合",
+          "isDeprecated": false,
+          "name": "genres",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "keyword",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "keywords",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "游戏平台",
+          "isDeprecated": false,
+          "name": "platform",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[direction:1 field:weight]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "平台集合",
+          "isDeprecated": false,
+          "name": "platforms",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "视角",
+          "isDeprecated": false,
+          "name": "player_perspective",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:weight direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "视角集合",
+          "isDeprecated": false,
+          "name": "player_perspectives",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "不同地区的发行方",
+          "isDeprecated": false,
+          "name": "publisher",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:weight direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "发布集合",
+          "isDeprecated": false,
+          "name": "publishers",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:score direction:0]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"steam_cn\"",
+              "description": "",
+              "name": "store",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "评分面板",
+          "isDeprecated": false,
+          "name": "score_leaderboards",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "\"map[themes:-1 genres:-1 game_modes:-1 player_perspectives:-1 game_engines:-1 category:-1 platform:-1]\"",
+              "description": "筛选条件",
+              "name": "filters",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "filter",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"\"",
+              "description": "query keywords",
+              "name": "query",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "GAME",
+              "name": "type",
+              "type": {
+                "kind": "ENUM",
+                "name": "itemType",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "请使用esearch",
+          "description": "搜索（已废弃）",
+          "isDeprecated": true,
+          "name": "search",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "片段集合",
+          "isDeprecated": false,
+          "name": "sections",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "section",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": null,
+              "description": "",
+              "name": "id",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "题材",
+          "isDeprecated": false,
+          "name": "theme",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:weight direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "题材集合",
+          "isDeprecated": false,
+          "name": "themes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "query",
+      "possibleTypes": null
+    },
+    {
+      "description": "The `Boolean` scalar type represents `true` or `false`.",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "SCALAR",
+      "name": "Boolean",
+      "possibleTypes": null
+    },
+    {
+      "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "SCALAR",
+      "name": "Float",
+      "possibleTypes": null
+    },
+    {
+      "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "SCALAR",
+      "name": "Int",
+      "possibleTypes": null
+    },
+    {
+      "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "SCALAR",
+      "name": "String",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏id",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏名称",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "GamePromptStruct",
+      "possibleTypes": null
+    },
+    {
+      "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document. \n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "args",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__InputValue",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "locations",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "__DirectiveLocation",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "Use `locations`.",
+          "description": "",
+          "isDeprecated": true,
+          "name": "onField",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "Use `locations`.",
+          "description": "",
+          "isDeprecated": true,
+          "name": "onFragment",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "Use `locations`.",
+          "description": "",
+          "isDeprecated": true,
+          "name": "onOperation",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__Directive",
+      "possibleTypes": null
+    },
+    {
+      "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+      "enumValues": [
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an argument definition.",
+          "isDeprecated": false,
+          "name": "ARGUMENT_DEFINITION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an enum definition.",
+          "isDeprecated": false,
+          "name": "ENUM"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an enum value definition.",
+          "isDeprecated": false,
+          "name": "ENUM_VALUE"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a field.",
+          "isDeprecated": false,
+          "name": "FIELD"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a field definition.",
+          "isDeprecated": false,
+          "name": "FIELD_DEFINITION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a fragment definition.",
+          "isDeprecated": false,
+          "name": "FRAGMENT_DEFINITION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a fragment spread.",
+          "isDeprecated": false,
+          "name": "FRAGMENT_SPREAD"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an inline fragment.",
+          "isDeprecated": false,
+          "name": "INLINE_FRAGMENT"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an input object field definition.",
+          "isDeprecated": false,
+          "name": "INPUT_FIELD_DEFINITION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an input object type definition.",
+          "isDeprecated": false,
+          "name": "INPUT_OBJECT"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to an interface definition.",
+          "isDeprecated": false,
+          "name": "INTERFACE"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a mutation operation.",
+          "isDeprecated": false,
+          "name": "MUTATION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a object definition.",
+          "isDeprecated": false,
+          "name": "OBJECT"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a query operation.",
+          "isDeprecated": false,
+          "name": "QUERY"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a scalar definition.",
+          "isDeprecated": false,
+          "name": "SCALAR"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a schema definition.",
+          "isDeprecated": false,
+          "name": "SCHEMA"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a subscription operation.",
+          "isDeprecated": false,
+          "name": "SUBSCRIPTION"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Location adjacent to a union definition.",
+          "isDeprecated": false,
+          "name": "UNION"
+        }
+      ],
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "ENUM",
+      "name": "__DirectiveLocation",
+      "possibleTypes": null
+    },
+    {
+      "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "deprecationReason",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "isDeprecated",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__EnumValue",
+      "possibleTypes": null
+    },
+    {
+      "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "args",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__InputValue",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "deprecationReason",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "isDeprecated",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__Field",
+      "possibleTypes": null
+    },
+    {
+      "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "A GraphQL-formatted string representing the default value for this input value.",
+          "isDeprecated": false,
+          "name": "defaultValue",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__InputValue",
+      "possibleTypes": null
+    },
+    {
+      "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "A list of all directives supported by this server.",
+          "isDeprecated": false,
+          "name": "directives",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Directive",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+          "isDeprecated": false,
+          "name": "mutationType",
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "The type that query operations will be rooted at.",
+          "isDeprecated": false,
+          "name": "queryType",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "If this server supports subscription, the type that subscription operations will be rooted at.",
+          "isDeprecated": false,
+          "name": "subscriptionType",
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "A list of all types supported by this server.",
+          "isDeprecated": false,
+          "name": "types",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__Schema",
+      "possibleTypes": null
+    },
+    {
+      "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "false",
+              "description": "",
+              "name": "includeDeprecated",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "enumValues",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__EnumValue",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "false",
+              "description": "",
+              "name": "includeDeprecated",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "fields",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Field",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "inputFields",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__InputValue",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "interfaces",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "kind",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "ENUM",
+              "name": "__TypeKind",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "ofType",
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "possibleTypes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "__Type",
+      "possibleTypes": null
+    },
+    {
+      "description": "An enum describing what kind of type a given `__Type` is",
+      "enumValues": [
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is an enum. `enumValues` is a valid field.",
+          "isDeprecated": false,
+          "name": "ENUM"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is an input object. `inputFields` is a valid field.",
+          "isDeprecated": false,
+          "name": "INPUT_OBJECT"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
+          "isDeprecated": false,
+          "name": "INTERFACE"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is a list. `ofType` is a valid field.",
+          "isDeprecated": false,
+          "name": "LIST"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is a non-null. `ofType` is a valid field.",
+          "isDeprecated": false,
+          "name": "NON_NULL"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
+          "isDeprecated": false,
+          "name": "OBJECT"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is a scalar.",
+          "isDeprecated": false,
+          "name": "SCALAR"
+        },
+        {
+          "deprecationReason": "",
+          "description": "Indicates this type is a union. `possibleTypes` is a valid field.",
+          "isDeprecated": false,
+          "name": "UNION"
+        }
+      ],
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "ENUM",
+      "name": "__TypeKind",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "数据所属类型",
+          "isDeprecated": false,
+          "name": "article_genre",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "点击数（阅读数）",
+          "isDeprecated": false,
+          "name": "click_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "评论数量",
+          "isDeprecated": false,
+          "name": "comment_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "dbkey",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "dbkey_all",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "dbkeyAll",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章摘要 ; string type",
+          "isDeprecated": false,
+          "name": "desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "微博内的图片（不含表情）",
+          "isDeprecated": false,
+          "name": "img_location",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imglocation",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章大图个数",
+          "isDeprecated": false,
+          "name": "img_location_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "点赞数",
+          "isDeprecated": false,
+          "name": "like_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "news nid",
+          "isDeprecated": false,
+          "name": "nid",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "html格式的正文（爬虫解析后的）",
+          "isDeprecated": false,
+          "name": "parsed_content",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "按照规定格式解析出的文章纯文本个数 ; int type",
+          "isDeprecated": false,
+          "name": "parsed_content_char_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "按照规定格式解析出的文章纯文本",
+          "isDeprecated": false,
+          "name": "parsed_content_main_body",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "发布时间（string type）",
+          "isDeprecated": false,
+          "name": "publish_time",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "跳转",
+          "isDeprecated": false,
+          "name": "referer",
+          "type": {
+            "kind": "OBJECT",
+            "name": "article",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "转发量",
+          "isDeprecated": false,
+          "name": "repost_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "抓取地址响应url str（真实可用地址)",
+          "isDeprecated": false,
+          "name": "response_url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章小图",
+          "isDeprecated": false,
+          "name": "small_img_location",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imglocation",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章小图个数（int type)",
+          "isDeprecated": false,
+          "name": "small_img_location_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章关键词标签 ; list type",
+          "isDeprecated": false,
+          "name": "tags",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "爬虫爬取的时间",
+          "isDeprecated": false,
+          "name": "timestamp",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文章标题",
+          "isDeprecated": false,
+          "name": "title",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "最新页面更新时间",
+          "isDeprecated": false,
+          "name": "update_time",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "唯一爬取url， 爬虫真实爬取时详情页url（微信特殊)",
+          "isDeprecated": false,
+          "name": "url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "用户",
+          "isDeprecated": false,
+          "name": "user",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "user",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "用户头像图片",
+          "isDeprecated": false,
+          "name": "user_img_location",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imglocation",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "微博内的视频封面图",
+          "isDeprecated": false,
+          "name": "video_img_location",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imglocation",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "微博内的视频封面图个数",
+          "isDeprecated": false,
+          "name": "video_img_location_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "微博内包含的视频",
+          "isDeprecated": false,
+          "name": "video_location",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "videolocation",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频总计数",
+          "isDeprecated": false,
+          "name": "video_location_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "article",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "发布时间",
+          "isDeprecated": false,
+          "name": "begin_time",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "背景图集合",
+          "isDeprecated": false,
+          "name": "bg_cover",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collectionCover",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "公司类型",
+          "isDeprecated": false,
+          "name": "business_entity",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "从事业务",
+          "isDeprecated": false,
+          "name": "business_nature",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "关闭时间",
+          "isDeprecated": false,
+          "name": "company_end",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "母公司",
+          "isDeprecated": false,
+          "name": "company_parent",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "标语",
+          "isDeprecated": false,
+          "name": "company_slogan",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "创立时间",
+          "isDeprecated": false,
+          "name": "company_start",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "正文",
+          "isDeprecated": false,
+          "name": "content_text",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "数量",
+          "isDeprecated": false,
+          "name": "count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片info",
+          "isDeprecated": false,
+          "name": "cover",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collectionCover",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "engine开发公司",
+          "isDeprecated": false,
+          "name": "created_company",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "列在左侧的详细描述",
+          "isDeprecated": false,
+          "name": "description",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "platform开发公司",
+          "isDeprecated": false,
+          "name": "developed_company",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "子引擎",
+          "isDeprecated": false,
+          "name": "engine_child",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "引擎功能",
+          "isDeprecated": false,
+          "name": "engine_function",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:id direction:0]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "games",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "genre_namespace",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总部所在城市",
+          "isDeprecated": false,
+          "name": "headquarter_city",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总部所在城区",
+          "isDeprecated": false,
+          "name": "headquarter_district",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总部所在国家",
+          "isDeprecated": false,
+          "name": "headquarter_nation",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总部所在大区",
+          "isDeprecated": false,
+          "name": "headquarter_region",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "外部链接",
+          "isDeprecated": false,
+          "name": "links",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "link",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "logo图集合",
+          "isDeprecated": false,
+          "name": "logo_cover",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collectionCover",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "代表作，列在左侧.",
+          "isDeprecated": false,
+          "name": "main_games",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称集合",
+          "isDeprecated": false,
+          "name": "names",
+          "type": {
+            "kind": "OBJECT",
+            "name": "names",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "所有权",
+          "isDeprecated": false,
+          "name": "owned_company",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "game站pageid",
+          "isDeprecated": false,
+          "name": "page_id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "game站pagename",
+          "isDeprecated": false,
+          "name": "page_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "igdb的slug，沿用保留",
+          "isDeprecated": false,
+          "name": "platform_slug",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "编程语言",
+          "isDeprecated": false,
+          "name": "programme_language",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "对应的genre的id",
+          "isDeprecated": false,
+          "name": "redirect_genre",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "相关namespace 在themes、game_modes、player_perspectives中选一个",
+          "isDeprecated": false,
+          "name": "related_ns",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "相关namespace具体id",
+          "isDeprecated": false,
+          "name": "related_ns_id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "详细介绍，为简介的展开结果",
+          "isDeprecated": false,
+          "name": "storyline",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "简述",
+          "isDeprecated": false,
+          "name": "summary",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "官网",
+          "isDeprecated": false,
+          "name": "website",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "权重 1-5 ",
+          "isDeprecated": false,
+          "name": "weight",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "在huijiwiki.com上的对应站点前缀，默认值为game",
+          "isDeprecated": false,
+          "name": "wiki_pre",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "collection",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "封面类型 1:默认封面 2:备用封面",
+          "isDeprecated": false,
+          "name": "cover_type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片描述",
+          "isDeprecated": false,
+          "name": "desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片格式",
+          "isDeprecated": false,
+          "name": "format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片高",
+          "isDeprecated": false,
+          "name": "height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片序列号",
+          "isDeprecated": false,
+          "name": "index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "is_deleted",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片路径",
+          "isDeprecated": false,
+          "name": "path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片大小",
+          "isDeprecated": false,
+          "name": "size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片原始url",
+          "isDeprecated": false,
+          "name": "src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片类型",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片宽",
+          "isDeprecated": false,
+          "name": "width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "collectionCover",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "公司收录数",
+          "isDeprecated": false,
+          "name": "companies",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏收录数",
+          "isDeprecated": false,
+          "name": "games",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "counttype",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片描述",
+          "isDeprecated": false,
+          "name": "desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片格式",
+          "isDeprecated": false,
+          "name": "format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片高",
+          "isDeprecated": false,
+          "name": "height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片序列号",
+          "isDeprecated": false,
+          "name": "index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片路径",
+          "isDeprecated": false,
+          "name": "path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片大小",
+          "isDeprecated": false,
+          "name": "size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片原始url",
+          "isDeprecated": false,
+          "name": "src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片类型",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片宽",
+          "isDeprecated": false,
+          "name": "width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "cover",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "日期",
+          "isDeprecated": false,
+          "name": "date",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "平台",
+          "isDeprecated": false,
+          "name": "platform",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "地区",
+          "isDeprecated": false,
+          "name": "region",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "date",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏名",
+          "isDeprecated": false,
+          "name": "game",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "dbkey",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "dbkeyAll",
+      "possibleTypes": null
+    },
+    {
+      "description": "Sorting direciton",
+      "enumValues": [
+        {
+          "deprecationReason": "",
+          "description": "升序",
+          "isDeprecated": false,
+          "name": "ASC"
+        },
+        {
+          "deprecationReason": "",
+          "description": "降序",
+          "isDeprecated": false,
+          "name": "DESC"
+        }
+      ],
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "ENUM",
+      "name": "direction",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏",
+          "isDeprecated": false,
+          "name": "game",
+          "type": {
+            "kind": "OBJECT",
+            "name": "game",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "高亮",
+          "isDeprecated": false,
+          "name": "highlight",
+          "type": {
+            "kind": "OBJECT",
+            "name": "highlight",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "评分",
+          "isDeprecated": false,
+          "name": "score",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Float",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "esgames",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "结果",
+          "isDeprecated": false,
+          "name": "gameresults",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "esgames",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "最大评分",
+          "isDeprecated": false,
+          "name": "max_score",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Float",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总数",
+          "isDeprecated": false,
+          "name": "total",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "essearch",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": [
+        {
+          "defaultValue": "-1",
+          "description": "页面类型  1：游戏本体  2：DLC  3：资料片  4：独立资料片",
+          "name": "category",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "引擎",
+          "name": "game_engines",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "游戏模式",
+          "name": "game_modes",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "品类",
+          "name": "genres",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "游戏平台",
+          "name": "platform",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "视角",
+          "name": "player_perspectives",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "-1",
+          "description": "游戏题材",
+          "name": "themes",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "interfaces": null,
+      "kind": "INPUT_OBJECT",
+      "name": "filter",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "音频语言",
+          "isDeprecated": false,
+          "name": "audio_lang",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "avatars",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "bundles",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "buy_in_app",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "即将改为数组",
+          "description": "页面类型  1：游戏本体  2：DLC  3：资料片  4：独立资料片",
+          "isDeprecated": true,
+          "name": "category",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "页面类型名",
+          "isDeprecated": false,
+          "name": "category_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "聚合页",
+          "isDeprecated": false,
+          "name": "collections",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片集合",
+          "isDeprecated": false,
+          "name": "covers",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "cover",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "开发商",
+          "isDeprecated": false,
+          "name": "developers",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "dlcs",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "expansions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "external_links",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "links",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "features",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "首发日期",
+          "isDeprecated": false,
+          "name": "first_release_date",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "世界观",
+          "isDeprecated": false,
+          "name": "franchises",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "game",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "引擎",
+          "isDeprecated": false,
+          "name": "game_engines",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏模式",
+          "isDeprecated": false,
+          "name": "game_modes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "1: 正常：未删除可搜索\t0: 隐藏：不可搜索，未删除 -1: 屏蔽：已删除，不可搜索",
+          "isDeprecated": false,
+          "name": "game_status",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "games",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏类型",
+          "isDeprecated": false,
+          "name": "genres",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "界面语言",
+          "isDeprecated": false,
+          "name": "interface_lang",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "igdb额外字段",
+          "isDeprecated": false,
+          "name": "keywords",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "请使用names",
+          "description": "名称",
+          "isDeprecated": true,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称集合",
+          "isDeprecated": false,
+          "name": "names",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "name",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"map[field:update_time direction:1]\"",
+              "description": "sort",
+              "name": "orderBy",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "orderBy",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "资讯",
+          "isDeprecated": false,
+          "name": "news",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "article",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏平台",
+          "isDeprecated": false,
+          "name": "platforms",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视角",
+          "isDeprecated": false,
+          "name": "player_perspectives",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "0",
+              "description": "起始时间",
+              "name": "dateFrom",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "2147483647",
+              "description": "截止时间",
+              "name": "dateTo",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"[eshop_us indienova pss_cn_zhs pss_hk_zhs pss_hk_zht pss_jp pss_us steam_cn xbox_cn xbox_hk xbox_tw xbox_us]\"",
+              "description": "one or more of \"eshop_us\", \"indienova\",\n                                    \"pss_cn_zhs\", \"pss_hk_zhs\", \"pss_hk_zht\",\n                                     \"pss_jp\", \"pss_us\",\"steam_cn\", \"xbox_cn\",\n                                      \"xbox_hk\", \"xbox_tw\",\"xbox_us\"",
+              "name": "stores",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "defaultValue": "\"[0 1 2 3 4 5 6 7 8]\"",
+              "description": "1 - original price\n                                      2 - discounted price\n                                      3 - member exclusive price\n                                      4 - member exclusive price with discount",
+              "name": "types",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "价格",
+          "isDeprecated": false,
+          "name": "prices",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "price",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "不同地区的发行方",
+          "isDeprecated": false,
+          "name": "publishers",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "publishers",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "ratings",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "rating",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "重复游戏重定向id",
+          "isDeprecated": false,
+          "name": "redirect_id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "各个地区的发布日期",
+          "isDeprecated": false,
+          "name": "release_dates",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "date",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "0",
+              "description": "起始时间",
+              "name": "dateFrom",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "2147483647",
+              "description": "截止时间",
+              "name": "dateTo",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "\"[eshop_us indienova pss_cn_zhs pss_hk_zhs pss_hk_zht pss_jp pss_us steam_cn xbox_cn xbox_hk xbox_tw xbox_us]\"",
+              "description": "one or more of \"eshop_us\", \"indienova\",\n\"pss_cn_zhs\", \"pss_hk_zhs\", \"pss_hk_zht\", \"pss_jp\", \"pss_us\",\n\"steam_cn\", \"xbox_cn\",\"xbox_hk\", \"xbox_tw\",\n\"xbox_us\"",
+              "name": "stores",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "评分",
+          "isDeprecated": false,
+          "name": "scores",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "score",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "截屏",
+          "isDeprecated": false,
+          "name": "screenshots",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "screenshots",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "片段集合",
+          "isDeprecated": false,
+          "name": "sections",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "section",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "ps额外字段",
+          "isDeprecated": false,
+          "name": "size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "standalone_expansions",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "完整描述html",
+          "isDeprecated": false,
+          "name": "storyline_html",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "完整描述",
+          "isDeprecated": false,
+          "name": "storyline_text",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "字母语言",
+          "isDeprecated": false,
+          "name": "subtitle_lang",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "简介html",
+          "isDeprecated": false,
+          "name": "summary_html",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "简介",
+          "isDeprecated": false,
+          "name": "summary_text",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "系统需求html，暂缓",
+          "isDeprecated": false,
+          "name": "system_requirements_html",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "系统需求，暂缓",
+          "isDeprecated": false,
+          "name": "system_requirements_text",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "system_themes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "game",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏题材",
+          "isDeprecated": false,
+          "name": "themes",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "collection",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "编辑更新时间",
+          "isDeprecated": false,
+          "name": "updated_at",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "videos",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "videos",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [
+            {
+              "defaultValue": "10",
+              "description": "limit",
+              "name": "first",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "0",
+              "description": "offset",
+              "name": "skip",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "deprecationReason": "",
+          "description": "微博",
+          "isDeprecated": false,
+          "name": "weibos",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "article",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏权重",
+          "isDeprecated": false,
+          "name": "weight",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "game",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": [
+        {
+          "defaultValue": "\"\"",
+          "description": "品类集合",
+          "name": "genres",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "\"\"",
+          "description": "语言",
+          "name": "interface_lang",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "\"\"",
+          "description": "游戏平台集合",
+          "name": "platform",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "interfaces": null,
+      "kind": "INPUT_OBJECT",
+      "name": "gamesFilter",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏名",
+          "isDeprecated": false,
+          "name": "game_name",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "highlight",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "checksum",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片描述",
+          "isDeprecated": false,
+          "name": "img_desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片格式",
+          "isDeprecated": false,
+          "name": "img_format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片高",
+          "isDeprecated": false,
+          "name": "img_height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片序列号",
+          "isDeprecated": false,
+          "name": "img_index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片路径",
+          "isDeprecated": false,
+          "name": "img_path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片大小",
+          "isDeprecated": false,
+          "name": "img_size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片原始url",
+          "isDeprecated": false,
+          "name": "img_src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片类型",
+          "isDeprecated": false,
+          "name": "img_type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片宽",
+          "isDeprecated": false,
+          "name": "img_width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "imglocation",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "游戏名称集合",
+          "isDeprecated": false,
+          "name": "game_names",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "GamePromptStruct",
+              "ofType": null
+            }
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "inputprompt",
+      "possibleTypes": null
+    },
+    {
+      "description": "item type",
+      "enumValues": [
+        {
+          "deprecationReason": "",
+          "description": "game",
+          "isDeprecated": false,
+          "name": "GAME"
+        }
+      ],
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "kind": "ENUM",
+      "name": "itemType",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "标题",
+          "isDeprecated": false,
+          "name": "title",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "url",
+          "isDeprecated": false,
+          "name": "url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "link",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "链接url",
+          "isDeprecated": false,
+          "name": "url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "links",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称",
+          "isDeprecated": false,
+          "name": "content",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "语言",
+          "isDeprecated": false,
+          "name": "lang",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "name",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "别名",
+          "isDeprecated": false,
+          "name": "alias",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "英语",
+          "isDeprecated": false,
+          "name": "en_us",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "全名",
+          "isDeprecated": false,
+          "name": "formal",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "日语",
+          "isDeprecated": false,
+          "name": "ja_jp",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "曾用名",
+          "isDeprecated": false,
+          "name": "old",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "简称/缩写",
+          "isDeprecated": false,
+          "name": "short",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "汉语",
+          "isDeprecated": false,
+          "name": "zh_cn",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "names",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": null,
+      "inputFields": [
+        {
+          "defaultValue": "\"ASC\"",
+          "description": "Sorting direciton. Only ASC and DESC are supported.",
+          "name": "direction",
+          "type": {
+            "kind": "ENUM",
+            "name": "direction",
+            "ofType": null
+          }
+        },
+        {
+          "defaultValue": "\"id\"",
+          "description": "要按排序的字段名",
+          "name": "field",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "interfaces": null,
+      "kind": "INPUT_OBJECT",
+      "name": "orderBy",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "货币/货币ID，根据source区分",
+          "isDeprecated": false,
+          "name": "currency",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "当天日期，去掉时分秒后转timestamp",
+          "isDeprecated": false,
+          "name": "date",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "价格，*100（整数），为0则为免费。数据有误则为null",
+          "isDeprecated": false,
+          "name": "price",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "store",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "store_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "1-售价/2-折扣价/3-会员价/4-会员折扣价/0-其他",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "type_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "唯一爬取url， 爬虫真实爬取时详情页url（微信特殊)",
+          "isDeprecated": false,
+          "name": "url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "抓取地址响应url str（真实可用地址)",
+          "isDeprecated": false,
+          "name": "url_response",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "price",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "不同地区的发行方",
+          "isDeprecated": false,
+          "name": "publisher",
+          "type": {
+            "kind": "OBJECT",
+            "name": "collection",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "地区",
+          "isDeprecated": false,
+          "name": "region",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "publishers",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "html正文",
+          "isDeprecated": false,
+          "name": "contents_html",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "文本正文",
+          "isDeprecated": false,
+          "name": "contents_text",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "名称",
+          "isDeprecated": false,
+          "name": "name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "system",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "rating",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "aggregated_score",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "aggregated_score_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "当天日期，去掉时分秒后转timestamp",
+          "isDeprecated": false,
+          "name": "date",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "得分。始终使用百分制。",
+          "isDeprecated": false,
+          "name": "score",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "score_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "store",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "store_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "总评价数",
+          "isDeprecated": false,
+          "name": "total_score",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "在个别评分中附带的链接",
+          "isDeprecated": false,
+          "name": "url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "score",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片描述",
+          "isDeprecated": false,
+          "name": "desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片格式",
+          "isDeprecated": false,
+          "name": "format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片高",
+          "isDeprecated": false,
+          "name": "height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片序列号",
+          "isDeprecated": false,
+          "name": "index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片路径",
+          "isDeprecated": false,
+          "name": "path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片大小",
+          "isDeprecated": false,
+          "name": "size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片原始url",
+          "isDeprecated": false,
+          "name": "src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片类型",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "图片宽",
+          "isDeprecated": false,
+          "name": "width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "screenshots",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "内容html",
+          "isDeprecated": false,
+          "name": "content_html",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "是否展示本片段",
+          "isDeprecated": false,
+          "name": "is_show",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "联运内容位置",
+          "isDeprecated": false,
+          "name": "position",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "section",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "user_badge",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "用户id",
+          "isDeprecated": false,
+          "name": "user_id",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "用户名",
+          "isDeprecated": false,
+          "name": "user_name",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "user_url",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "user",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "checksum",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "flag",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Boolean",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "message",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "video_code",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频长度 （秒）",
+          "isDeprecated": false,
+          "name": "video_duration",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频格式",
+          "isDeprecated": false,
+          "name": "video_format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频帧数",
+          "isDeprecated": false,
+          "name": "video_fps",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "video_frame_count",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频高",
+          "isDeprecated": false,
+          "name": "video_height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频序列数",
+          "isDeprecated": false,
+          "name": "video_index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频路径",
+          "isDeprecated": false,
+          "name": "video_path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频下载源",
+          "isDeprecated": false,
+          "name": "video_src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频宽",
+          "isDeprecated": false,
+          "name": "video_width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "videolocation",
+      "possibleTypes": null
+    },
+    {
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频描述",
+          "isDeprecated": false,
+          "name": "desc",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频格式",
+          "isDeprecated": false,
+          "name": "format",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频高",
+          "isDeprecated": false,
+          "name": "height",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频序列号",
+          "isDeprecated": false,
+          "name": "index",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "length",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频路径",
+          "isDeprecated": false,
+          "name": "path",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频大小",
+          "isDeprecated": false,
+          "name": "size",
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频原始url",
+          "isDeprecated": false,
+          "name": "src",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "",
+          "isDeprecated": false,
+          "name": "status",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频类型",
+          "isDeprecated": false,
+          "name": "type",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "args": [],
+          "deprecationReason": "",
+          "description": "视频宽",
+          "isDeprecated": false,
+          "name": "width",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "kind": "OBJECT",
+      "name": "videos",
+      "possibleTypes": null
+    }
+  ],
+  "__info": "entry: https://graphql.xy.huijitrans.com/graphql\ntimestamp: 2018-10-19T06:30:15.410Z\n----------------------------------------------------------------"
+}

@@ -7,6 +7,14 @@
 - GraphQL Schema (IDL format)
 - TypeScript Declaration
 
+## Install
+
+```bash
+npm install -D @huiji/graphql-tools
+# or
+yarn add -D @huiji/graphql-tools
+```
+
 ## Usage
 
 ```typescript

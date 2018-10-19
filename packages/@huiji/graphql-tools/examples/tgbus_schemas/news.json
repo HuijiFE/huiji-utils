@@ -1,0 +1,2462 @@
+{
+  "queryType": {
+    "name": "Query"
+  },
+  "mutationType": null,
+  "subscriptionType": null,
+  "types": [
+    {
+      "kind": "OBJECT",
+      "name": "Query",
+      "description": "查询",
+      "fields": [
+        {
+          "name": "games",
+          "description": "通过id查询games",
+          "args": [
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "gamesType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "groups",
+          "description": "通过groupName查询containerGroup中的内容",
+          "args": [
+            {
+              "name": "group_name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "OBJECT",
+            "name": "GroupType",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "list",
+          "description": "列表查询",
+          "args": [
+            {
+              "name": "option",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tags",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "website",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "OBJECT",
+            "name": "listResType",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "news",
+          "description": "通过id查询news",
+          "args": [
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "newsType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "search",
+          "description": "搜索查询",
+          "args": [
+            {
+              "name": "keyword",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "website",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "OBJECT",
+            "name": "listResType",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "SCALAR",
+      "name": "Boolean",
+      "description": "The `Boolean` scalar type represents `true` or `false`.",
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "SCALAR",
+      "name": "Int",
+      "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "SCALAR",
+      "name": "String",
+      "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "ContainerType",
+      "description": "container结构",
+      "fields": [
+        {
+          "name": "container_id",
+          "description": "id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "container_name",
+          "description": "container名称",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "hasSource",
+          "description": "是否包含内容",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "sourceType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "GroupType",
+      "description": "group结构",
+      "fields": [
+        {
+          "name": "containers",
+          "description": "container名称",
+          "args": [
+            {
+              "name": "container_id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "ContainerType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "status",
+          "description": "id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Boolean",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__Directive",
+      "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+      "fields": [
+        {
+          "name": "args",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__InputValue",
+                  "ofType": null
+                }
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "description",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "locations",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "__DirectiveLocation",
+                  "ofType": null
+                }
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "name",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "onField",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "isDeprecated": true,
+          "deprecationReason": "Use `locations`."
+        },
+        {
+          "name": "onFragment",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "isDeprecated": true,
+          "deprecationReason": "Use `locations`."
+        },
+        {
+          "name": "onOperation",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "isDeprecated": true,
+          "deprecationReason": "Use `locations`."
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "ENUM",
+      "name": "__DirectiveLocation",
+      "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "enumValues": [
+        {
+          "name": "ARGUMENT_DEFINITION",
+          "description": "Location adjacent to an argument definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "ENUM",
+          "description": "Location adjacent to an enum definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "ENUM_VALUE",
+          "description": "Location adjacent to an enum value definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "FIELD",
+          "description": "Location adjacent to a field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "FIELD_DEFINITION",
+          "description": "Location adjacent to a field definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "FRAGMENT_DEFINITION",
+          "description": "Location adjacent to a fragment definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "FRAGMENT_SPREAD",
+          "description": "Location adjacent to a fragment spread.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INLINE_FRAGMENT",
+          "description": "Location adjacent to an inline fragment.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INPUT_FIELD_DEFINITION",
+          "description": "Location adjacent to an input object field definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INPUT_OBJECT",
+          "description": "Location adjacent to an input object type definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INTERFACE",
+          "description": "Location adjacent to an interface definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "MUTATION",
+          "description": "Location adjacent to a mutation operation.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "OBJECT",
+          "description": "Location adjacent to an object type definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "QUERY",
+          "description": "Location adjacent to a query operation.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "SCALAR",
+          "description": "Location adjacent to a scalar definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "SCHEMA",
+          "description": "Location adjacent to a schema definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "SUBSCRIPTION",
+          "description": "Location adjacent to a subscription operation.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "UNION",
+          "description": "Location adjacent to a union definition.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__EnumValue",
+      "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+      "fields": [
+        {
+          "name": "deprecationReason",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "description",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "isDeprecated",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "name",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__Field",
+      "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+      "fields": [
+        {
+          "name": "args",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__InputValue",
+                  "ofType": null
+                }
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "deprecationReason",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "description",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "isDeprecated",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "name",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "type",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__InputValue",
+      "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+      "fields": [
+        {
+          "name": "defaultValue",
+          "description": "A GraphQL-formatted string representing the default value for this input value.",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "description",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "name",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "type",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__Schema",
+      "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
+      "fields": [
+        {
+          "name": "directives",
+          "description": "A list of all directives supported by this server.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Directive",
+                  "ofType": null
+                }
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "mutationType",
+          "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "queryType",
+          "description": "The type that query operations will be rooted at.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "__Type",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "subscriptionType",
+          "description": "If this server support subscription, the type that subscription operations will be rooted at.",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "types",
+          "description": "A list of all types supported by this server.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type",
+                  "ofType": null
+                }
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "__Type",
+      "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+      "fields": [
+        {
+          "name": "description",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "enumValues",
+          "description": null,
+          "args": [
+            {
+              "name": "includeDeprecated",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": "false"
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__EnumValue",
+                "ofType": null
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "fields",
+          "description": null,
+          "args": [
+            {
+              "name": "includeDeprecated",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": "false"
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Field",
+                "ofType": null
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "inputFields",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__InputValue",
+                "ofType": null
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "interfaces",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "kind",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "ENUM",
+              "name": "__TypeKind",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "name",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "ofType",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "__Type",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "possibleTypes",
+          "description": null,
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              }
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "ENUM",
+      "name": "__TypeKind",
+      "description": "An enum describing what kind of type a given `__Type` is.",
+      "fields": null,
+      "inputFields": null,
+      "interfaces": null,
+      "enumValues": [
+        {
+          "name": "ENUM",
+          "description": "Indicates this type is an enum. `enumValues` is a valid field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INPUT_OBJECT",
+          "description": "Indicates this type is an input object. `inputFields` is a valid field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "INTERFACE",
+          "description": "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "LIST",
+          "description": "Indicates this type is a list. `ofType` is a valid field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "NON_NULL",
+          "description": "Indicates this type is a non-null. `ofType` is a valid field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "OBJECT",
+          "description": "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "SCALAR",
+          "description": "Indicates this type is a scalar.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "UNION",
+          "description": "Indicates this type is a union. `possibleTypes` is a valid field.",
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "achorType",
+      "description": "锚点结构",
+      "fields": [
+        {
+          "name": "name",
+          "description": "名字",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "title",
+          "description": "标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "contentsType",
+      "description": "稿件目录结构",
+      "fields": [
+        {
+          "name": "achor",
+          "description": "锚点",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "achorType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "page",
+          "description": "页数",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "title",
+          "description": "标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "gamesType",
+      "description": "游戏结构",
+      "fields": [
+        {
+          "name": "category",
+          "description": "原版游戏/DLC/资料片等",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "cover",
+          "description": "封面图",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imagesType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "dbkey",
+          "description": "索引",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "first_release_date",
+          "description": "首发日期",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "game_engines",
+          "description": "游戏引擎",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "game_modes",
+          "description": "游戏模式",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "game_name",
+          "description": "游戏名称",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "game_status",
+          "description": "游戏状态",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "genres",
+          "description": "品类",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "names",
+          "description": "游戏名-多语言",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "namesType",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "news",
+          "description": "关联新闻",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "newsType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "platform",
+          "description": "游戏平台",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "player_perspectives",
+          "description": "玩家视角",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "screenshot_images",
+          "description": "截屏",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "imagesType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "storyline",
+          "description": "故事线",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "summary",
+          "description": "简介",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "themes",
+          "description": "题材",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "url",
+          "description": "链接",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "imagesType",
+      "description": "截图信息结构",
+      "fields": [
+        {
+          "name": "img_path",
+          "description": "图片路径",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "listResType",
+      "description": "列表查询结果",
+      "fields": [
+        {
+          "name": "result",
+          "description": "查询结果",
+          "args": [
+            {
+              "name": "offset",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "start",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "newsType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "total",
+          "description": "总数",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "namesType",
+      "description": "多语言姓名结构",
+      "fields": [
+        {
+          "name": "en_US",
+          "description": "英语名称",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "zh_CN",
+          "description": "中文名称",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "newsType",
+      "description": "新闻结构",
+      "fields": [
+        {
+          "name": "adminid",
+          "description": "文章修改用户ID",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "author",
+          "description": "文章作者",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "authorid",
+          "description": "作者id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "banner",
+          "description": "封面图",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "cms_url",
+          "description": "稿件链接",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "collection",
+          "description": "稿件合集名字",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "collectionindex",
+          "description": "稿件合集序号",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "contentraw",
+          "description": "稿件内容",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "contents",
+          "description": "稿件目录",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "contentsType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "contenttext",
+          "description": "去掉html标签的文章内容",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "ctime",
+          "description": "文章创建时间",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "description",
+          "description": "摘要",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "displaydate",
+          "description": "显示时间",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "editorid",
+          "description": "编辑者id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "gameid",
+          "description": "关联游戏ID",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "games",
+          "description": "关联游戏",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "gamesType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "keywords",
+          "description": "关键词",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "labels",
+          "description": "标记标签",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "locationlink",
+          "description": "跳转链接",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "nid",
+          "description": "文章ID",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "publishdate",
+          "description": "推送时间",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "pushto",
+          "description": "推送到指定站点",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "rating",
+          "description": "文章权重",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "relatednews",
+          "description": "相关新闻",
+          "args": [
+            {
+              "name": "website",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "newsType",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "reviewbanner",
+          "description": "评测图",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "reviewmaf",
+          "description": "优缺点",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "reviewmafType",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "reviewscore",
+          "description": "评测评分",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "reviewsummary",
+          "description": "评测简评",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "send_time",
+          "description": "Kafka推送到es的时间",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "sourcedesc",
+          "description": "来源描述",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "sourcelink",
+          "description": "来源url",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "status",
+          "description": "新闻状态",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "tags",
+          "description": "资讯标签",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "titlefull",
+          "description": "完整标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "titleshort",
+          "description": "短标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "typeid",
+          "description": "稿件类型ID",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "typename",
+          "description": "稿件类型名称",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "reviewmafType",
+      "description": "优缺点结构",
+      "fields": [
+        {
+          "name": "fault",
+          "description": "默认",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "good",
+          "description": "good",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "status",
+          "description": "status",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Boolean",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    },
+    {
+      "kind": "OBJECT",
+      "name": "sourceType",
+      "description": "新闻结构",
+      "fields": [
+        {
+          "name": "author",
+          "description": "作者",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "authorid",
+          "description": "作者id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "date",
+          "description": "发布日期",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "id",
+          "description": "新闻id",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "locationlink",
+          "description": "跳转链接",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "pic",
+          "description": "图片地址",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "platform",
+          "description": "游戏平台",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "pushto",
+          "description": "推送到指定站点",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "reviewscore",
+          "description": "评测分数",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "summary",
+          "description": "简介",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "tags",
+          "description": "类别",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "title",
+          "description": "标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "title_alt",
+          "description": "英文标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "titleshort",
+          "description": "短标题",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "type",
+          "description": "类别",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "typename",
+          "description": "文章类型名称",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "url",
+          "description": "链接",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ],
+      "inputFields": null,
+      "interfaces": [],
+      "enumValues": null,
+      "possibleTypes": null
+    }
+  ],
+  "directives": [
+    {
+      "name": "include",
+      "description": "Directs the executor to include this field or fragment only when the `if` argument is true.",
+      "locations": [
+        "FIELD",
+        "FRAGMENT_SPREAD",
+        "INLINE_FRAGMENT"
+      ],
+      "args": [
+        {
+          "name": "if",
+          "description": "Included when true.",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "defaultValue": null
+        }
+      ]
+    },
+    {
+      "name": "skip",
+      "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
+      "locations": [
+        "FIELD",
+        "FRAGMENT_SPREAD",
+        "INLINE_FRAGMENT"
+      ],
+      "args": [
+        {
+          "name": "if",
+          "description": "Skipped when true.",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          "defaultValue": null
+        }
+      ]
+    },
+    {
+      "name": "deprecated",
+      "description": "Marks an element of a GraphQL schema as no longer supported.",
+      "locations": [
+        "FIELD_DEFINITION",
+        "ENUM_VALUE"
+      ],
+      "args": [
+        {
+          "name": "reason",
+          "description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https://daringfireball.net/projects/markdown/).",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          },
+          "defaultValue": "\"No longer supported\""
+        }
+      ]
+    }
+  ],
+  "__info": "entry: https://news-graphql.xy.huijitrans.com/graphql\ntimestamp: 2018-10-19T06:30:20.211Z\n----------------------------------------------------------------"
+}

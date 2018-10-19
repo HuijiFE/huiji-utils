@@ -1,0 +1,1125 @@
+# entry: https://graphql.xy.huijitrans.com/graphql
+# timestamp: 2018-10-19T06:30:15.410Z
+# ----------------------------------------------------------------
+
+schema {
+  query: query
+}
+
+type query {
+  collection(id: Int): collection
+
+  collections(
+    # limit
+    first: Int = 10
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # count_type
+  count: counttype
+
+  # 开发方
+  developer(id: Int): collection
+
+  # 开发方
+  developers(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:weight direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 搜索
+  esearch(
+    # 筛选条件
+    filters: filter = "map[themes:-1 genres:-1 game_modes:-1 player_perspectives:-1 game_engines:-1 category:-1 platform:-1]"
+
+    # limit
+    first: Int = 10
+
+    # query keywords
+    query: String = ""
+
+    # offset
+    skip: Int = 0
+
+    # GAME
+    type: itemType = 0
+  ): essearch
+
+  # 搜索输入提示
+  essearch_prompt(query: String): inputprompt
+
+  # 世界观
+  franchise(id: Int): collection
+
+  franchises(
+    # limit
+    first: Int = 10
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 游戏
+  game(
+    # id
+    id: Int
+  ): game
+
+  # 引擎
+  game_engine(id: Int): collection
+
+  # 引擎集合
+  game_engines(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[direction:1 field:weight]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 游戏列表
+  game_list(
+    # id集合
+    ids: [Int]
+  ): [game]
+
+  # 游戏模式
+  game_mode(id: Int): collection
+
+  # 游戏模式集合
+  game_modes(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[direction:1 field:weight]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 游戏集合
+  games(
+    # begin_time
+    begin_time: Int = 0
+
+    # end_time
+    end_time: Int = 0
+
+    # 筛选条件
+    filters: gamesFilter = "map[platform: genres: interface_lang:]"
+
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:first_release_date direction:0]"
+
+    # offset
+    skip: Int = 0
+  ): [game]
+
+  # 品类
+  genre(id: Int): collection
+
+  # 品类集合
+  genres(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:weight direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  keyword(id: Int): collection
+
+  keywords(
+    # limit
+    first: Int = 10
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 游戏平台
+  platform(id: Int): collection
+
+  # 平台集合
+  platforms(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[direction:1 field:weight]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 视角
+  player_perspective(id: Int): collection
+
+  # 视角集合
+  player_perspectives(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:weight direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 不同地区的发行方
+  publisher(id: Int): collection
+
+  # 发布集合
+  publishers(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:weight direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+
+  # 评分面板
+  score_leaderboards(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:score direction:0]"
+
+    # offset
+    skip: Int = 0
+
+    store: String = "steam_cn"
+  ): [game]
+
+  # 搜索（已废弃）
+  search(
+    # 筛选条件
+    filters: filter = "map[themes:-1 genres:-1 game_modes:-1 player_perspectives:-1 game_engines:-1 category:-1 platform:-1]"
+
+    # limit
+    first: Int = 10
+
+    # query keywords
+    query: String = ""
+
+    # offset
+    skip: Int = 0
+
+    # GAME
+    type: itemType = 0
+  ): [game] @deprecated(reason: "请使用esearch")
+
+  # 片段集合
+  sections: [section]
+
+  # 题材
+  theme(id: Int): collection
+
+  # 题材集合
+  themes(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:weight direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [collection]
+}
+
+type GamePromptStruct {
+  # 游戏id
+  id: Int
+
+  # 游戏名称
+  name: String
+}
+
+type article {
+  # 数据所属类型
+  article_genre: String
+
+  # 点击数（阅读数）
+  click_count: Int
+
+  # 评论数量
+  comment_count: Int
+
+  dbkey: String
+
+  dbkey_all: [dbkeyAll]
+
+  # 文章摘要 ; string type
+  desc: String
+
+  # 微博内的图片（不含表情）
+  img_location: [imglocation]
+
+  # 文章大图个数
+  img_location_count: Int
+
+  # 点赞数
+  like_count: Int
+
+  # news nid
+  nid: Int
+
+  # html格式的正文（爬虫解析后的）
+  parsed_content: String
+
+  # 按照规定格式解析出的文章纯文本个数 ; int type
+  parsed_content_char_count: Int
+
+  # 按照规定格式解析出的文章纯文本
+  parsed_content_main_body: String
+
+  # 发布时间（string type）
+  publish_time: Int
+
+  # 跳转
+  referer: article
+
+  # 转发量
+  repost_count: Int
+
+  # 抓取地址响应url str（真实可用地址)
+  response_url: String
+
+  # 文章小图
+  small_img_location: [imglocation]
+
+  # 文章小图个数（int type)
+  small_img_location_count: Int
+
+  # 文章关键词标签 ; list type
+  tags: [String]
+
+  # 爬虫爬取的时间
+  timestamp: String
+
+  # 文章标题
+  title: String
+
+  # 最新页面更新时间
+  update_time: Int
+
+  # 唯一爬取url， 爬虫真实爬取时详情页url（微信特殊)
+  url: String
+
+  # 用户
+  user: [user]
+
+  # 用户头像图片
+  user_img_location: [imglocation]
+
+  # 微博内的视频封面图
+  video_img_location: [imglocation]
+
+  # 微博内的视频封面图个数
+  video_img_location_count: Int
+
+  # 微博内包含的视频
+  video_location: [videolocation]
+
+  # 视频总计数
+  video_location_count: Int
+}
+
+type collection {
+  # 发布时间
+  begin_time: String
+
+  # 背景图集合
+  bg_cover: [collectionCover]
+
+  # 公司类型
+  business_entity: [String]
+
+  # 从事业务
+  business_nature: [String]
+
+  # 关闭时间
+  company_end: String
+
+  # 母公司
+  company_parent: [collection]
+
+  # 标语
+  company_slogan: String
+
+  # 创立时间
+  company_start: String
+
+  # 正文
+  content_text: String
+
+  # 数量
+  count: Int
+
+  # 图片info
+  cover: collectionCover
+
+  # engine开发公司
+  created_company: [collection]
+
+  # 列在左侧的详细描述
+  description: String
+
+  # platform开发公司
+  developed_company: [collection]
+
+  # 子引擎
+  engine_child: [String]
+
+  # 引擎功能
+  engine_function: [String]
+
+  games(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:id direction:0]"
+
+    # offset
+    skip: Int = 0
+  ): [game]
+
+  genre_namespace: String
+
+  # 总部所在城市
+  headquarter_city: String
+
+  # 总部所在城区
+  headquarter_district: String
+
+  # 总部所在国家
+  headquarter_nation: String
+
+  # 总部所在大区
+  headquarter_region: String
+
+  id: Int
+
+  # 外部链接
+  links: [link]
+
+  # logo图集合
+  logo_cover: [collectionCover]
+
+  # 代表作，列在左侧.
+  main_games: [game]
+
+  # 名称
+  name: String
+
+  # 名称集合
+  names: names
+
+  # 所有权
+  owned_company: [collection]
+
+  # game站pageid
+  page_id: Int
+
+  # game站pagename
+  page_name: String
+
+  # igdb的slug，沿用保留
+  platform_slug: String
+
+  # 编程语言
+  programme_language: [String]
+
+  # 对应的genre的id
+  redirect_genre: String
+
+  # 相关namespace 在themes、game_modes、player_perspectives中选一个
+  related_ns: String
+
+  # 相关namespace具体id
+  related_ns_id: String
+
+  # 详细介绍，为简介的展开结果
+  storyline: String
+
+  # 简述
+  summary: String
+
+  # 官网
+  website: String
+
+  # 权重 1-5
+  weight: Int
+
+  # 在huijiwiki.com上的对应站点前缀，默认值为game
+  wiki_pre: String
+}
+
+type collectionCover {
+  # 封面类型 1:默认封面 2:备用封面
+  cover_type: String
+
+  # 图片描述
+  desc: String
+
+  # 图片格式
+  format: String
+
+  # 图片高
+  height: Int
+
+  # 图片序列号
+  index: String
+
+  is_deleted: Int
+
+  # 图片路径
+  path: String
+
+  # 图片大小
+  size: Int
+
+  # 图片原始url
+  src: String
+
+  # 图片类型
+  type: String
+
+  # 图片宽
+  width: Int
+}
+
+type counttype {
+  # 公司收录数
+  companies: Int
+
+  # 游戏收录数
+  games: Int
+}
+
+type cover {
+  # 图片描述
+  desc: String
+
+  # 图片格式
+  format: String
+
+  # 图片高
+  height: String
+
+  # 图片序列号
+  index: String
+
+  # 图片路径
+  path: String
+
+  # 图片大小
+  size: Int
+
+  # 图片原始url
+  src: String
+
+  # 图片类型
+  type: String
+
+  # 图片宽
+  width: String
+}
+
+type date {
+  # 日期
+  date: Int
+
+  # 平台
+  platform: collection
+
+  # 地区
+  region: String
+}
+
+type dbkeyAll {
+  # 游戏名
+  game: String
+
+  # dbkey
+  id: Int
+}
+
+# Sorting direciton
+enum direction {
+  # 升序
+  ASC
+
+  # 降序
+  DESC
+}
+
+type esgames {
+  # 游戏
+  game: game
+
+  # 高亮
+  highlight: highlight
+
+  # 评分
+  score: Float
+}
+
+type essearch {
+  # 结果
+  gameresults: [esgames]
+
+  # 最大评分
+  max_score: Float
+
+  # 总数
+  total: Int
+}
+
+input filter {
+  # 页面类型  1：游戏本体  2：DLC  3：资料片  4：独立资料片
+  category: Int = -1
+
+  # 引擎
+  game_engines: Int = -1
+
+  # 游戏模式
+  game_modes: Int = -1
+
+  # 品类
+  genres: Int = -1
+
+  # 游戏平台
+  platform: Int = -1
+
+  # 视角
+  player_perspectives: Int = -1
+
+  # 游戏题材
+  themes: Int = -1
+}
+
+type game {
+  # 音频语言
+  audio_lang: String
+
+  avatars: [game]
+
+  bundles: [game]
+
+  buy_in_app: String
+
+  # 页面类型  1：游戏本体  2：DLC  3：资料片  4：独立资料片
+  category: Int @deprecated(reason: "即将改为数组")
+
+  # 页面类型名
+  category_name: String
+
+  # 聚合页
+  collections: [collection]
+
+  # 图片集合
+  covers: [cover]
+
+  # 开发商
+  developers: [collection]
+
+  dlcs: [game]
+
+  expansions: [game]
+
+  external_links: [links]
+
+  features: [String]
+
+  # 首发日期
+  first_release_date: Int
+
+  # 世界观
+  franchises: [collection]
+
+  game: [game]
+
+  # 引擎
+  game_engines: [collection]
+
+  # 游戏模式
+  game_modes: [collection]
+
+  # 1: 正常：未删除可搜索	0: 隐藏：不可搜索，未删除 -1: 屏蔽：已删除，不可搜索
+  game_status: String
+
+  games: [game]
+
+  # 游戏类型
+  genres: [collection]
+
+  id: Int
+
+  # 界面语言
+  interface_lang: String
+
+  # igdb额外字段
+  keywords: [collection]
+
+  # 名称
+  name: String @deprecated(reason: "请使用names")
+
+  # 名称集合
+  names: [name]
+
+  # 资讯
+  news(
+    # limit
+    first: Int = 10
+
+    # sort
+    orderBy: orderBy = "map[field:update_time direction:1]"
+
+    # offset
+    skip: Int = 0
+  ): [article]
+
+  # 游戏平台
+  platforms: [collection]
+
+  # 视角
+  player_perspectives: [collection]
+
+  # 价格
+  prices(
+    # 起始时间
+    dateFrom: Int = 0
+
+    # 截止时间
+    dateTo: Int = 2147483647
+
+    # one or more of "eshop_us", "indienova",
+    # "pss_cn_zhs", "pss_hk_zhs", "pss_hk_zht",
+    # "pss_jp", "pss_us","steam_cn", "xbox_cn",
+    # "xbox_hk", "xbox_tw","xbox_us"
+    stores: [String] = "[eshop_us indienova pss_cn_zhs pss_hk_zhs pss_hk_zht pss_jp pss_us steam_cn xbox_cn xbox_hk xbox_tw xbox_us]"
+
+    # 1 - original price
+    # 2 - discounted price
+    # 3 - member exclusive price
+    # 4 - member exclusive price with discount
+    types: [Int] = "[0 1 2 3 4 5 6 7 8]"
+  ): [price]
+
+  # 不同地区的发行方
+  publishers: [publishers]
+
+  ratings: [rating]
+
+  # 重复游戏重定向id
+  redirect_id: Int
+
+  # 各个地区的发布日期
+  release_dates: [date]
+
+  # 评分
+  scores(
+    # 起始时间
+    dateFrom: Int = 0
+
+    # 截止时间
+    dateTo: Int = 2147483647
+
+    # one or more of "eshop_us", "indienova",
+    # "pss_cn_zhs", "pss_hk_zhs", "pss_hk_zht", "pss_jp", "pss_us",
+    # "steam_cn", "xbox_cn","xbox_hk", "xbox_tw",
+    # "xbox_us"
+    stores: [String] = "[eshop_us indienova pss_cn_zhs pss_hk_zhs pss_hk_zht pss_jp pss_us steam_cn xbox_cn xbox_hk xbox_tw xbox_us]"
+  ): [score]
+
+  # 截屏
+  screenshots: [screenshots]
+
+  # 片段集合
+  sections: [section]
+
+  # ps额外字段
+  size: String
+
+  standalone_expansions: [game]
+
+  # 完整描述html
+  storyline_html: String
+
+  # 完整描述
+  storyline_text: String
+
+  # 字母语言
+  subtitle_lang: String
+
+  # 简介html
+  summary_html: String
+
+  # 简介
+  summary_text: String
+
+  # 系统需求html，暂缓
+  system_requirements_html: String
+
+  # 系统需求，暂缓
+  system_requirements_text: String
+
+  system_themes: [game]
+
+  # 游戏题材
+  themes: [collection]
+
+  # 编辑更新时间
+  updated_at: Int
+
+  videos: [videos]
+
+  # 微博
+  weibos(
+    # limit
+    first: Int = 10
+
+    # offset
+    skip: Int = 0
+  ): [article]
+
+  # 游戏权重
+  weight: Int
+}
+
+input gamesFilter {
+  # 品类集合
+  genres: String = ""
+
+  # 语言
+  interface_lang: String = ""
+
+  # 游戏平台集合
+  platform: String = ""
+}
+
+type highlight {
+  # 游戏名
+  game_name: [String]
+}
+
+type imglocation {
+  checksum: String
+
+  # 图片描述
+  img_desc: String
+
+  # 图片格式
+  img_format: String
+
+  # 图片高
+  img_height: Int
+
+  # 图片序列号
+  img_index: Int
+
+  # 图片路径
+  img_path: String
+
+  # 图片大小
+  img_size: Int
+
+  # 图片原始url
+  img_src: String
+
+  # 图片类型
+  img_type: String
+
+  # 图片宽
+  img_width: Int
+}
+
+type inputprompt {
+  # 游戏名称集合
+  game_names: [GamePromptStruct]
+}
+
+# item type
+enum itemType {
+  # game
+  GAME
+}
+
+type link {
+  # 标题
+  title: String
+
+  # url
+  url: String
+}
+
+type links {
+  id: Int
+
+  # 名称
+  name: String
+
+  # 链接url
+  url: String
+}
+
+type name {
+  # 名称
+  content: String
+
+  # 语言
+  lang: String
+}
+
+type names {
+  # 别名
+  alias: String
+
+  # 英语
+  en_us: String
+
+  # 全名
+  formal: String
+
+  # 日语
+  ja_jp: String
+
+  # 曾用名
+  old: String
+
+  # 简称/缩写
+  short: String
+
+  # 汉语
+  zh_cn: String
+}
+
+input orderBy {
+  # Sorting direciton. Only ASC and DESC are supported.
+  direction: direction = ASC
+
+  # 要按排序的字段名
+  field: String = "id"
+}
+
+type price {
+  # 货币/货币ID，根据source区分
+  currency: String
+
+  # 当天日期，去掉时分秒后转timestamp
+  date: Int
+
+  # 价格，*100（整数），为0则为免费。数据有误则为null
+  price: Int
+
+  store: String
+
+  store_name: String
+
+  # 1-售价/2-折扣价/3-会员价/4-会员折扣价/0-其他
+  type: Int
+
+  type_name: String
+
+  # 唯一爬取url， 爬虫真实爬取时详情页url（微信特殊)
+  url: String
+
+  # 抓取地址响应url str（真实可用地址)
+  url_response: String
+}
+
+type publishers {
+  # 不同地区的发行方
+  publisher: collection
+
+  # 地区
+  region: String
+}
+
+type rating {
+  # html正文
+  contents_html: String
+
+  # 文本正文
+  contents_text: String
+
+  id: Int
+
+  # 名称
+  name: String
+
+  system: String
+}
+
+type score {
+  aggregated_score: Int
+
+  aggregated_score_count: Int
+
+  # 当天日期，去掉时分秒后转timestamp
+  date: Int
+
+  # 得分。始终使用百分制。
+  score: Int
+
+  score_count: Int
+
+  store: String
+
+  store_name: String
+
+  # 总评价数
+  total_score: Int
+
+  # 在个别评分中附带的链接
+  url: String
+}
+
+type screenshots {
+  # 图片描述
+  desc: String
+
+  # 图片格式
+  format: String
+
+  # 图片高
+  height: String
+
+  # 图片序列号
+  index: String
+
+  # 图片路径
+  path: String
+
+  # 图片大小
+  size: Int
+
+  # 图片原始url
+  src: String
+
+  # 图片类型
+  type: String
+
+  # 图片宽
+  width: String
+}
+
+type section {
+  # 内容html
+  content_html: String
+
+  id: String
+
+  # 是否展示本片段
+  is_show: Int
+
+  # 联运内容位置
+  position: Int
+}
+
+type user {
+  user_badge: Int
+
+  # 用户id
+  user_id: Int
+
+  # 用户名
+  user_name: String
+
+  user_url: String
+}
+
+type videolocation {
+  checksum: String
+
+  flag: Boolean
+
+  message: String
+
+  video_code: String
+
+  # 视频长度 （秒）
+  video_duration: String
+
+  # 视频格式
+  video_format: String
+
+  # 视频帧数
+  video_fps: String
+
+  video_frame_count: Int
+
+  # 视频高
+  video_height: Int
+
+  # 视频序列数
+  video_index: Int
+
+  # 视频路径
+  video_path: String
+
+  # 视频下载源
+  video_src: String
+
+  # 视频宽
+  video_width: Int
+}
+
+type videos {
+  # 视频描述
+  desc: String
+
+  # 视频格式
+  format: String
+
+  # 视频高
+  height: String
+
+  # 视频序列号
+  index: String
+
+  length: String
+
+  # 视频路径
+  path: String
+
+  # 视频大小
+  size: Int
+
+  # 视频原始url
+  src: String
+
+  status: String
+
+  # 视频类型
+  type: String
+
+  # 视频宽
+  width: String
+}

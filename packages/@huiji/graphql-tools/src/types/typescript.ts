@@ -273,7 +273,9 @@ function genType(td: __Type, nonNull?: boolean): string {
       name = BUILT_IN_SCALAR_TYPES.includes(name) ? name.toLowerCase() : name;
       break;
     case __TypeKind.LIST:
-      return `(${genType(td.ofType as __Type)})[]`;
+      return nonNull
+        ? `(${genType(td.ofType as __Type, isNonNull(td.ofType))})[]`
+        : `((${genType(td.ofType as __Type, isNonNull(td.ofType))})[] | null)`;
     case __TypeKind.NON_NULL:
       return genType(td.ofType as __Type, true);
 

@@ -18,6 +18,15 @@ describe('introspection.ts', () => {
 
   test('getIntrospection', async () => {
     const intro = await getIntrospection(gamelibEntry);
+
+    const game = intro.types.find(td => td.name === 'game');
+    if (game) {
+      const news = game.fields.find(fd => fd.name === 'news');
+      if (news) {
+        expect(news.args.map(a => a.name)).toMatchObject(['first', 'orderBy', 'skip']);
+      }
+    }
+
     fs.writeFileSync('.tmp/gl.intro.json', JSON.stringify(intro, undefined, '  '));
     expect(intro).toHaveProperty('types');
     expect(intro).toHaveProperty('queryType');
