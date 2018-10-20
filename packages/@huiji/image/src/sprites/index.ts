@@ -1,6 +1,6 @@
-import * as fs from 'fs';
-import * as ps from 'path';
-import * as globby from 'globby';
+import fs from 'fs';
+import ps from 'path';
+import globby from 'globby';
 import { PNG } from 'pngjs';
 
 export interface SpritesOptions {
