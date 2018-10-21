@@ -1,0 +1,29 @@
+{
+  "name": "@huiji/meta",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "a tool for generating html metadata",
+  "main": "dist/common/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "meta",
+    "metadata",
+    "seo"
+  ],
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "build": "yarn clean:dist && tsc -p ./tsconfig.esm.json && tsc -p ./tsconfig.cjs.json",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.esm.json -t verbose",
+    "test": "jest --maxWorkers=4"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  }
+}
