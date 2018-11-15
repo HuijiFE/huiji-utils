@@ -17,5 +17,6 @@ module.exports = {
   },
   testMatch: ['**/*.(spec|test).ts'],
   testURL: 'http://localhost',
+  testEnvironment: 'node',
   moduleDirectories: ['node_modules', 'packages'],
 };
