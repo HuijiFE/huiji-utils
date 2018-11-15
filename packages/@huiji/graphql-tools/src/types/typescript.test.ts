@@ -39,7 +39,7 @@ describe('types/graphql.ts', () => {
       customScalars,
     });
 
-    expect(schema.includes('export type Date = string;')).toBe(true);
+    expect(schema.includes('export type Date = string')).toBe(true);
     expect(typeof schema).toBe('string');
 
     fs.writeFileSync('.tmp/gh.d.ts', schema);
@@ -50,7 +50,6 @@ describe('types/graphql.ts', () => {
     const schema = generateTypeScriptDeclaration(intro, {
       debug: true,
       outputRoot: true,
-      hoistScalars: false,
     });
 
     fs.writeFileSync('.tmp/gl.debug.d.ts', schema);
@@ -61,7 +60,6 @@ describe('types/graphql.ts', () => {
     const schema = generateTypeScriptDeclaration(intro, {
       debug: true,
       outputRoot: true,
-      hoistScalars: false,
       customScalars,
     });
 

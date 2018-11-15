@@ -41,6 +41,7 @@ export interface TypeScriptDeclarationOptions {
    */
   debug?: boolean;
   /**
+   * If true, output the root type `Query`, `Mutation` and `Subscript`.
    * @default true
    */
   outputRoot?: boolean;
@@ -49,9 +50,15 @@ export interface TypeScriptDeclarationOptions {
    */
   outputResponse?: boolean;
   /**
+   * Make all properties optional
    * @default true
    */
   partial?: boolean;
+  /**
+   * Make all properties readonly
+   * @default true
+   */
+  readonly?: boolean;
 
   customScalars?: Record<string, string>;
 
@@ -68,6 +75,7 @@ export function generateTypeScriptDeclaration(
     debug = false,
     outputRoot = true,
     partial = true,
+    readonly = true,
     customScalars = {},
     prettierOptions = {},
   }: TypeScriptDeclarationOptions = {},
@@ -88,7 +96,7 @@ export function generateTypeScriptDeclaration(
     ...customScalars,
   };
   idl += types
-    .map(td => genTypeDeclaration(td, partial, scalarsMap))
+    .map(td => genTypeDeclaration(td, partial, readonly, scalarsMap))
     .filter(s => !!s)
     .join('\n\n');
 
@@ -110,6 +118,7 @@ function genRoot(schema: __Schema): string {
 function genTypeDeclaration(
   td: __Type,
   partial: boolean,
+  readonly: boolean,
   customScalarTypes: Record<string, string>,
 ): string {
   if (
@@ -136,9 +145,9 @@ function genTypeDeclaration(
   }
 
   const block: string[] = [
-    ...genFieldOrValueArray(td.fields, partial, 'fields'),
-    ...genFieldOrValueArray(td.inputFields, partial, 'inputFields'),
-    ...genFieldOrValueArray(td.enumValues, false, 'enumValues'),
+    ...genFieldOrValueArray(td.fields, partial, readonly, 'fields'),
+    ...genFieldOrValueArray(td.inputFields, partial, readonly, 'inputFields'),
+    ...genFieldOrValueArray(td.enumValues, false, false, 'enumValues'),
   ];
 
   if (block.length > 0) {
@@ -177,11 +186,12 @@ function genDescription(
 function genFieldOrValueArray(
   arr: (__Field | __InputValue | __EnumValue)[] | null | undefined,
   partial: boolean,
+  readonly: boolean,
   category: 'fields' | 'inputFields' | 'enumValues',
 ): string[] {
   return arr && arr.length > 0
     ? arr
-        .map(e => genFieldOrValue(e, partial, category))
+        .map(e => genFieldOrValue(e, partial, readonly, category))
         .reduce<string[]>((result, cur) => result.concat(cur), [])
     : [];
 }
@@ -189,9 +199,10 @@ function genFieldOrValueArray(
 function genFieldOrValue(
   mb: __Field | __InputValue | __EnumValue,
   partial: boolean,
+  readonly: boolean,
   category: 'fields' | 'inputFields' | 'enumValues',
 ): string[] {
-  let text: string = mb.name;
+  let text: string = readonly ? `readonly ${mb.name}` : mb.name;
 
   let description = (mb.description || '')
     .trim()
