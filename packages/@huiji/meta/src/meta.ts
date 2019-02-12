@@ -1,3 +1,5 @@
+import { OpenGraph } from './open-graph';
+
 /**
  * Metadata contains information about the page
  */

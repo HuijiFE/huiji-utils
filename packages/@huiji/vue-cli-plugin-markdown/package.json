@@ -15,10 +15,6 @@
   ],
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@types/webpack-chain": "^4.8.1",
-    "@vue/cli-service": "^3.0.1"
-  },
   "dependencies": {
     "@huiji/vue-markdown-loader": "^1.0.3"
   }

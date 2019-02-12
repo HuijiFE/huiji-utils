@@ -1,3 +1,5 @@
+// tslint:disable:no-reserved-keywords
+
 /**
  * The Open Graph protocol enables any web page to become a rich object in a social graph.
  * Learn more: http://ogp.me/

@@ -1,6 +1,3 @@
 {
-  "extends": ["@huiji/tslint-rules"],
-  "linterOptions": {
-    "exclude": ["node_modules/**", "build/**", "dist/**"]
-  }
+  "extends": "../../../tsconfig.json"
 }

@@ -1,6 +1,12 @@
 {
   "extends": ["@huiji/tslint-rules"],
   "linterOptions": {
-    "exclude": ["node_modules/**", "build/**", "dist/**"]
+    "exclude": [
+      "node_modules/**",
+      "**/*.js",
+      "**/*.json",
+      "**/*.vue",
+      "packages/@huiji/*/dist/**/*"
+    ]
   }
 }

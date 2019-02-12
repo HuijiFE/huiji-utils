@@ -14,11 +14,13 @@
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "ts": "ts-node -r tsconfig-paths/register -P ../../../tsconfig.scripts.json",
     "clean:dist": "rimraf ./dist",
-    "build": "yarn clean:dist && tsc -p ./tsconfig.cjs.json",
-    "lint": "tslint -c ./tslint.json -p ./tsconfig.cjs.json -t verbose",
-    "test": "jest --maxWorkers=4"
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "yarn build:cjs && yarn build:esm",
+    "lint": "tslint -p tsconfig.json",
+    "_test": "jest --maxWorkers=4",
+    "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "dependencies": {
     "pngjs": "^3.3.3"

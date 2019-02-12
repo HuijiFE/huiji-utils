@@ -1,7 +1,20 @@
-const config = require('../../../jest.config');
-
-config.coverageThreshold.global.statements = 96;
-config.coverageThreshold.global.branches = 86;
-config.coverageThreshold.global.lines = 96;
-
-module.exports = config;
+module.exports = {
+  verbose: true,
+  collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      statements: 96,
+      branches: 86,
+      functions: 100,
+      lines: 96,
+    },
+  },
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  testMatch: ['**/*.(spec|test).ts'],
+  testURL: 'http://localhost',
+  testEnvironment: 'node',
+  moduleDirectories: ['node_modules', 'packages'],
+};

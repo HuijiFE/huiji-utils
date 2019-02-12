@@ -1,14 +1,19 @@
 {
-  "name": "@huiji/shared-utils",
-  "version": "1.0.0",
+  "name": "@huiji/color",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Huiji shared utils",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "description": "algorithms for color",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
   "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "color",
+    "algorithm"
+  ],
   "author": "duduluu <duduluu@outlook.com>",
   "license": "MIT",
   "scripts": {
@@ -19,15 +24,5 @@
     "lint": "tslint -p tsconfig.json",
     "_test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
-  },
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "globby": "^9.0.0",
-    "mkdirp": "^0.5.1",
-    "tslib": "^1.9.3"
-  },
-  "devDependencies": {
-    "@types/globby": "^8.0.0",
-    "@types/mkdirp": "^0.5.2"
   }
 }

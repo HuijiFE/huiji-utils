@@ -6,23 +6,26 @@
     "types": ["node", "jest"],
     "typeRoots": ["./node_modules/@types"],
     "strict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "jsx": "preserve",
-    "jsxFactory": "h",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
     "importHelpers": true,
-    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "rootDir": ".",
-    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
     "baseUrl": "."
   },
-  "include": ["packages"],
-  "exclude": ["node_modules", "packages/**/dist"]
+  "include": [
+    "packages/@huiji/*/src/**/*.ts",
+    "packages/@huiji/*/src/**/*.tsx",
+    "packages/@huiji/*/tests/**/*.ts",
+    "packages/@huiji/*/tests/**/*.tsx",
+    "packages/@huiji/*/scripts/**/*.ts",
+    // "packages/@huiji/*/typings/**/*.d.ts",
+    "scripts/**/*.ts",
+    "typings/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "**/*.test.*"]
 }

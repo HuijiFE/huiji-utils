@@ -1,10 +1,13 @@
 # Tests
+coverage/
 tests/
 __tests__/
 *.spec.*
 *.test.*
 
-# Project config
+# Project configs
 jest.config.js
-tsconfig.project.json
-tslint.project.json
+tsconfig.cjs.json
+tsconfig.esm.json
+tsconfig.json
+lint.json
