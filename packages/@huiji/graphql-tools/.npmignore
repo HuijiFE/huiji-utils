@@ -5,9 +5,10 @@ __tests__/
 *.spec.*
 *.test.*
 
-# Project configs
+\# Project configs
+typings/
 jest.config.js
 tsconfig.cjs.json
 tsconfig.esm.json
 tsconfig.json
-lint.json
+tslint.json

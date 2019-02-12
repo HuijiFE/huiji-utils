@@ -3,6 +3,6 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "esnext",
-    "outDir": "dist/cjs"
+    "outDir": "dist/esm"
   }
 }

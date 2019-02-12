@@ -1,0 +1,28 @@
+{
+  "name": "@huiji/vue-cli-utils",
+  "version": "0.1.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "algorithms for color",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "sideEffects": false,
+  "repository": "https://github.com/HuijiFE/huiji-utils",
+  "keywords": [
+    "color",
+    "algorithm"
+  ],
+  "author": "duduluu <duduluu@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "yarn build:cjs && yarn build:esm",
+    "lint": "tslint -p tsconfig.json",
+    "_test": "jest --maxWorkers=4",
+    "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
+  }
+}

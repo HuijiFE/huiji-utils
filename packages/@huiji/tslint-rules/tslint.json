@@ -34,6 +34,7 @@
     "quotemark": [true, "single", "jsx-double", "avoid-escape", "avoid-template"],
     "trailing-comma": [true, "all"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "newline-per-chained-call": false,
     "whitespace": [
       false,
       "check-branch",
