@@ -1,3 +1,4 @@
+// tslint:disable:no-require-imports
 import ChainableWebpackConfig from 'webpack-chain';
 import { VueServiceOptions } from '@vue/cli-service/lib/options';
 

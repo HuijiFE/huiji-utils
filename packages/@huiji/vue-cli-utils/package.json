@@ -24,5 +24,12 @@
     "lint": "tslint -p tsconfig.json",
     "_test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
+  },
+  "dependencies": {
+    "@types/webpack-chain": "^5.0.0"
+  },
+  "peerDependencies": {
+    "vue-server-renderer": "^2.5.0",
+    "webpack-node-externals": "^1.7.0"
   }
 }
