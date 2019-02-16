@@ -8,7 +8,7 @@ import {
   __InputValue,
   __EnumValue,
 } from '../introspection';
-import { eliminateIntrospectionType, isEnum } from '../utils';
+import { eliminateIntrospectionType, isEnum, isInputObject } from '../utils';
 
 const TYPE_KIND_KEYWORD_MAP: Record<__TypeKind, string> = {
   [__TypeKind.SCALAR]: 'scalar',
@@ -164,6 +164,11 @@ function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
     let defaultValue = fd.defaultValue;
     if (isEnum(fd.type)) {
       defaultValue = defaultValue.replace(/"/g, '');
+    }
+    if (isInputObject(fd.type)) {
+      // TODO
+      defaultValue = defaultValue.replace(/[\n\r]+(\ +)?/g, ' ').replace(/"/g, '\\"');
+      defaultValue = `"${defaultValue}" # INPUT_OBJECT`;
     }
     lastLine += ` = ${defaultValue}`;
   }

@@ -1,6 +1,6 @@
 {
   "name": "@huiji/graphql-tools",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "publishConfig": {
     "access": "public"
   },
@@ -24,8 +24,8 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build": "yarn build:cjs && yarn build:esm",
     "lint": "tslint -p tsconfig.json",
-    "schema:intro": "curl -H \"Authorization: bearer $PERSONAL_ACCESS_TOKEN_TEST\" https://api.github.com/graphql >> .tmp/gh.intro.json",
-    "schema:idl": "curl -H \"Authorization: bearer $PERSONAL_ACCESS_TOKEN_TEST\" -H \"Accept: application/vnd.github.v4.idl\" https://api.github.com/graphql >> .tmp/gh.idl.json",
+    "schema:intro": "curl -H \"Authorization: bearer f535042a7bba34ddeda4af162db8f7a320e197bd\" https://api.github.com/graphql >> .tmp/gh.intro.json",
+    "schema:idl": "curl -H \"Authorization: bearer f535042a7bba34ddeda4af162db8f7a320e197bd\" -H \"Accept: application/vnd.github.v4.idl\" https://api.github.com/graphql >> .tmp/gh.idl.json",
     "schema": "yarn schema:intro && yarn schema:idl",
     "temp-dir": "rimraf .tmp && mkdirp .tmp",
     "test:unit": "jest --maxWorkers=4",

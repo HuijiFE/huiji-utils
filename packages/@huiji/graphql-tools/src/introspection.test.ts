@@ -23,7 +23,13 @@ describe('introspection.ts', () => {
     if (game) {
       const news = game.fields.find(fd => fd.name === 'news');
       if (news) {
-        expect(news.args.map(a => a.name)).toMatchObject(['first', 'orderBy', 'skip']);
+        expect(news.args.map(a => a.name)).toMatchObject([
+          'data_source_keys',
+          'first',
+          'orderBy',
+          'skip',
+          'tag',
+        ]);
       }
     }
 
