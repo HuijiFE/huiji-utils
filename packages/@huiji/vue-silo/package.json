@@ -1,5 +1,5 @@
 {
-  "name": "@donews/vue-silo",
+  "name": "@huiji/vue-silo",
   "version": "0.1.0",
   "publishConfig": {
     "access": "public"
