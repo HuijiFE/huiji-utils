@@ -1,12 +1,12 @@
 {
   "name": "@huiji/graphql-tools",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "publishConfig": {
     "access": "public"
   },
   "description": "A tool kit to generate schema for GraphQL and type declaration for other languages.",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "modules": "dist/esm/index.d.ts",
   "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
