@@ -1,6 +1,5 @@
 {
   "name": "@huiji/graphql-tools",
-  "private": true,
   "description": "A tool kit to generate schema for GraphQL and type declaration for other languages.",
   "keywords": [
     "graphql",
