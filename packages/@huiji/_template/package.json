@@ -6,7 +6,7 @@
     "template",
     "huiji"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "duduluu",
     "email": "duduluu@outlook.com",
@@ -42,9 +42,7 @@
     "test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
-  "peerDependencies": {},
   "dependencies": {
     "tslib": "^1.9.3"
-  },
-  "devDependencies": {}
+  }
 }
