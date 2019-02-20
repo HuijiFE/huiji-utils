@@ -38,7 +38,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build": "yarn build:cjs && yarn build:esm",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest",
+    "test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "peerDependencies": {},
