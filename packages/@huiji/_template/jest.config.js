@@ -10,13 +10,10 @@ module.exports = {
     },
   },
   transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
     '^.+\\.tsx?$': 'ts-jest',
   },
-  snapshotSerializers: ['jest-serializer-vue'],
   testMatch: ['**/(src|tests|__tests__)/**/*.(test|spec).[jt]s?(x)'],
   testURL: 'http://localhost/',
-  moduleFileExtensions: ['js', 'jsx', 'json', 'vue', 'ts', 'tsx'],
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   moduleDirectories: ['node_modules'],
 };
