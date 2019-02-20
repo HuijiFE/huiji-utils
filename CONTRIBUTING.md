@@ -9,6 +9,7 @@ All of packages are in the directory `packages/@huiji/`.
 
 - NodeJS >= 10.0.0
 - Yarn >= 1.12.0
+- Lerna >= 3.0.0
 
 ### Installing
 
