@@ -1,0 +1,43 @@
+{
+  "name": "@huiji/template",
+  "private": true,
+  "description": "a package template for huiji-utils",
+  "version": "1.0.0",
+  "author": {
+    "name": "duduluu",
+    "email": "duduluu@outlook.com",
+    "url": "https://github.com/duduluu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
+  "files": [
+    "src/**/*",
+    "!**/*.test.*",
+    "!**/*.spec.*",
+    "!**/.tmp.*",
+    "dist",
+    "types"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "clean:dist": "rimraf dist",
+    "gen-files": "yarn ts scripts/gen-files.ts",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "yarn build:cjs && yarn build:esm",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

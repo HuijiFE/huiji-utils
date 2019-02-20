@@ -5,8 +5,8 @@
     "access": "public"
   },
   "description": "Huiji shared utils",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "sideEffects": false,
   "repository": "https://github.com/HuijiFE/huiji-utils",
   "author": "duduluu <duduluu@outlook.com>",
