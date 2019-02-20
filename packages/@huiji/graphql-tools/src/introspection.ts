@@ -490,15 +490,18 @@ export function hoistSchemaTypes(schema: __Schema): __Schema {
     ...schema.types.filter(td => td.kind !== __TypeKind.SCALAR),
   ];
 
-  [schema.subscriptionType, schema.mutationType, schema.queryType].forEach(sign => {
-    if (sign && sign.name) {
-      const index = schema.types.findIndex(td => td.name === sign.name);
-      if (index > 0) {
-        const [master] = schema.types.splice(index, 1);
-        schema.types.unshift(master);
-      }
-    }
-  });
+  schema.types.unshift(
+    ...[schema.queryType, schema.mutationType, schema.subscriptionType]
+      .map(sign => {
+        if (sign && sign.name) {
+          const index = schema.types.findIndex(td => td.name === sign.name);
+          const [master] = schema.types.splice(index, 1);
+
+          return master;
+        }
+      })
+      .filter((td): td is __Type => !!td),
+  );
 
   return schema;
 }
