@@ -42,6 +42,8 @@
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
   "devDependencies": {}
 }
