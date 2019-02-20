@@ -2,6 +2,10 @@
   "name": "@huiji/template",
   "private": true,
   "description": "a package template for huiji-utils",
+  "keywords": [
+    "template",
+    "huiji"
+  ],
   "version": "1.0.0",
   "author": {
     "name": "duduluu",
