@@ -34,7 +34,7 @@ import { getIntrospection, generateGraphQLSchema } from '@huiji/graphql-tools';
 (async () => {
   const intro = await getIntrospection('https://api.github.com/graphql', {
     headers: {
-      Authorization: `bearer ${process.env.PERSONAL_ACCESS_TOKEN_TEST}`,
+      Authorization: `bearer <YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>`,
     },
   });
 

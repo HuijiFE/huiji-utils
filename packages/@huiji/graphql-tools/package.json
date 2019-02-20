@@ -1,23 +1,38 @@
 {
   "name": "@huiji/graphql-tools",
-  "version": "0.3.2",
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "description": "A tool kit to generate schema for GraphQL and type declaration for other languages.",
-  "main": "dist/cjs/index.js",
-  "modules": "dist/esm/index.d.ts",
-  "sideEffects": false,
-  "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
-    "vue",
-    "webpack",
-    "vebpack-loader",
-    "markdown-it",
-    "markdown-it-plugin"
+    "graphql",
+    "typescript",
+    "huiji"
   ],
-  "author": "duduluu <duduluu@outlook.com>",
+  "version": "0.3.2",
+  "author": {
+    "name": "duduluu",
+    "email": "duduluu@outlook.com",
+    "url": "https://github.com/duduluu"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
+  "files": [
+    "src/**/*",
+    "!**/*.test.*",
+    "!**/*.spec.*",
+    "!**/.tmp.*",
+    "dist",
+    "types"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
   "scripts": {
     "clean:dist": "rimraf ./dist",
     "build:cjs": "tsc -p tsconfig.cjs.json",
@@ -29,16 +44,13 @@
     "schema": "yarn schema:intro && yarn schema:idl",
     "temp-dir": "rimraf .tmp && mkdirp .tmp",
     "test:unit": "jest --maxWorkers=4",
-    "test": "yarn temp-dir && yarn schema && yarn test:unit"
+    "test": "yarn temp-dir && yarn schema && yarn test:unit",
+    "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "dependencies": {
     "@types/prettier": "^1.13.2",
     "axios": "^0.18.0",
-    "loader-utils": "^1.1.0",
     "prettier": "^1.14.3",
     "tslib": "^1.9.3"
-  },
-  "devDependencies": {
-    "@types/loader-utils": "^1.1.3"
   }
 }
