@@ -3,7 +3,7 @@
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square)](https://github.com/facebook/jest)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square)](https://lernajs.io/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)
+![license](https://img.shields.io/github/license/huijife/huiji-utils.svg?style=flat-square)
 
 Checkout [CONTRIBUTING.md](CONTRIBUTING.md) to get started for development.
 
