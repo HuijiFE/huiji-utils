@@ -1,19 +1,27 @@
 {
   "name": "@huiji/tslint-rules",
-  "version": "2.0.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "description": "tslint rules for huiji projects",
-  "main": "tslint.json",
-  "sideEffects": false,
-  "repository": "https://github.com/HuijiFE/huiji-utils",
   "keywords": [
     "tslint",
     "typescript"
   ],
-  "author": "duduluu <duduluu@outlook.com>",
+  "version": "2.0.0",
+  "author": {
+    "name": "duduluu",
+    "email": "duduluu@outlook.com",
+    "url": "https://github.com/duduluu"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
+  "main": "tslint.json",
+  "sideEffects": false,
   "dependencies": {
     "tslint-microsoft-contrib": "^6.0.0"
   }
