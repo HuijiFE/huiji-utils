@@ -4,17 +4,16 @@ module.exports = {
   coverageThreshold: {
     global: {
       statements: 100,
-      branches: 93,
+      branches: 100,
       functions: 100,
       lines: 100,
     },
   },
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  testMatch: ['**/*.(spec|test).ts'],
-  testURL: 'http://localhost',
-  testEnvironment: 'node',
-  moduleDirectories: ['node_modules', 'packages'],
+  testMatch: ['**/(src|tests|__tests__)/**/*.(test|spec).[jt]s?(x)'],
+  testURL: 'http://localhost/',
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
+  moduleDirectories: ['node_modules'],
 };

@@ -1,33 +1,50 @@
 {
   "name": "@huiji/shared-utils",
-  "version": "1.0.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "description": "Huiji shared utils",
+  "version": "1.0.0",
+  "author": {
+    "name": "duduluu",
+    "email": "duduluu@outlook.com",
+    "url": "https://github.com/duduluu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
+  "files": [
+    "src/**/*",
+    "!**/*.test.*",
+    "!**/*.spec.*",
+    "!**/.tmp.*",
+    "dist",
+    "types"
+  ],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "sideEffects": false,
-  "repository": "https://github.com/HuijiFE/huiji-utils",
-  "author": "duduluu <duduluu@outlook.com>",
-  "license": "MIT",
   "scripts": {
-    "clean:dist": "rimraf ./dist",
+    "clean:dist": "rimraf dist",
+    "gen-files": "yarn ts scripts/gen-files.ts",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build": "yarn build:cjs && yarn build:esm",
     "lint": "tslint -p tsconfig.json",
-    "_test": "jest --maxWorkers=4",
+    "test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "dependencies": {
+    "@types/globby": "^8.0.0",
     "chalk": "^2.4.2",
     "globby": "^9.0.0",
     "mkdirp": "^0.5.1",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@types/globby": "^8.0.0",
     "@types/mkdirp": "^0.5.2"
   }
 }

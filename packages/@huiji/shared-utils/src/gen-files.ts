@@ -1,6 +1,7 @@
 import pth from 'path';
 import fs from 'fs';
 import globby from 'globby';
+import { Options as FastGlobOptions } from 'fast-glob';
 import mkdirp from 'mkdirp';
 import chalk, { Chalk } from 'chalk';
 
@@ -19,6 +20,7 @@ export interface FileInfo {
  */
 export interface GenFilesOptions {
   patterns: string | string[];
+  globbyOptions?: FastGlobOptions;
   output: string;
   comments?: string[];
   header?: string;
@@ -91,10 +93,13 @@ const banner: string = generateComments(
  */
 export async function genFiles(options: GenFilesOptions): Promise<void> {
   let body: string;
-  const files: FileInfo[] = (await globby([
-    ...(Array.isArray(options.patterns) ? options.patterns : [options.patterns]),
-    `!${options.output}`,
-  ]))
+  const files: FileInfo[] = (await globby(
+    [
+      ...(Array.isArray(options.patterns) ? options.patterns : [options.patterns]),
+      `!${options.output}`,
+    ],
+    options.globbyOptions,
+  ))
     .sort()
     .map(f => ({
       path: resolvePath(f, options.output),
