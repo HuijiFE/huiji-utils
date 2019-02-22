@@ -47,9 +47,9 @@
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },
   "dependencies": {
-    "@types/prettier": "^1.13.2",
+    "@types/prettier": "^1.16.1",
     "axios": "^0.18.0",
-    "prettier": "^1.14.3",
+    "prettier": "^1.16.4",
     "tslib": "^1.9.3"
   }
 }
