@@ -73,6 +73,7 @@
     "no-default-export": false,
     "no-relative-imports": false,
     "no-console": [true, "log"],
+    "non-literal-fs-path": false,
     "react-this-binding-issue": false,
     "no-backbone-get-set-outside-model": false,
     "mocha-no-side-effect-code": false,
