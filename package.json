@@ -1,16 +1,28 @@
 {
   "name": "huiji-utils",
-  "version": "0.1.0",
-  "author": "duduluu <duduluu@outlook.com>",
-  "license": "MIT",
   "private": true,
+  "keywords": [
+    "template",
+    "huiji"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "duduluu",
+    "email": "duduluu@outlook.com",
+    "url": "https://github.com/duduluu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
   "workspaces": [
     "packages/@huiji/*"
   ],
-  "scripts": {
-    "dep": "yarn ts scripts/dependencies.ts",
-    "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
-  },
   "devDependencies": {
     "@types/compression": "^0.0.36",
     "@types/dateformat": "^3.0.0",
