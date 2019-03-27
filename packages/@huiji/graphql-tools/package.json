@@ -37,7 +37,7 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build": "yarn build:cjs && yarn build:esm",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "eslint  src/ --ext .ts,.tsx",
     "schema:intro": "curl -H \"Authorization: bearer b7c92ac25b79bde070f642cf5e1f69eb43131368\" https://api.github.com/graphql >> .tmp/gh.intro.json",
     "schema:idl": "curl -H \"Authorization: bearer b7c92ac25b79bde070f642cf5e1f69eb43131368\" -H \"Accept: application/vnd.github.v4.idl\" https://api.github.com/graphql >> .tmp/gh.idl.json",
     "schema": "yarn schema:intro && yarn schema:idl",

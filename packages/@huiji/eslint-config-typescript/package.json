@@ -1,0 +1,28 @@
+{
+  "name": "@huiji/eslint-config-typescript",
+  "description": "eslint-config-typescript for huiji projects",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "airbnb"
+  ],
+  "version": "0.1.0",
+  "author": "huiji",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git",
+    "directory": "packages/@huiji/eslint-config-typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/HuijiFE/huiji-utils/issues"
+  },
+  "homepage": "https://github.com/HuijiFE/huiji-utils/tree/master/packages/@huiji/@huiji/eslint-config-typescript#readme",
+  "main": "index.js",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0"
+  }
+}

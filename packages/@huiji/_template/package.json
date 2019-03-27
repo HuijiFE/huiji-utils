@@ -7,25 +7,22 @@
     "huiji"
   ],
   "version": "1.0.1",
-  "author": {
-    "name": "duduluu",
-    "email": "duduluu@outlook.com",
-    "url": "https://github.com/duduluu"
-  },
+  "author": "huiji",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HuijiFE/huiji-utils.git"
+    "url": "git+https://github.com/HuijiFE/huiji-utils.git",
+    "directory": "packages/@huiji/_template"
   },
   "bugs": {
     "url": "https://github.com/HuijiFE/huiji-utils/issues"
   },
-  "homepage": "https://github.com/HuijiFE/huiji-utils#readme",
+  "homepage": "https://github.com/HuijiFE/huiji-utils/tree/master/packages/@huiji/_template#readme",
   "files": [
-    "src/**/*",
     "!**/*.test.*",
     "!**/*.spec.*",
     "!**/.tmp.*",
+    "src/**/*",
     "dist",
     "types"
   ],
@@ -35,10 +32,10 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "gen-files": "yarn ts scripts/gen-files.ts",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build": "yarn build:cjs && yarn build:esm",
-    "lint": "tslint -p tsconfig.json",
+    "tsc:cjs": "tsc -p tsconfig.cjs.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json",
+    "build": "yarn tsc:cjs && yarn tsc:esm",
+    "lint": "eslint  src/ --ext .ts,.tsx",
     "test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
   },

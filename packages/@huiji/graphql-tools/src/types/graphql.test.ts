@@ -3,16 +3,16 @@
  */
 import fs from 'fs';
 import pth from 'path';
+import prettier from 'prettier';
+import { defaultPrettierOptions } from '../prettier-options';
 import { __Type, __TypeKind, __Field, getIntrospection } from '../introspection';
 import { generateGraphQLSchema } from './graphql';
-import { defaultPrettierOptions } from '../prettier-options';
 import {
   gamelibEntry,
   rawIntroAsync,
   rawIDLAsync,
   rawIntroAsyncNoSort,
 } from '../../test/test-utils';
-import prettier from 'prettier';
 
 const entry: string = 'https://graphql.xy.huijitrans.com/graphql';
 
@@ -80,7 +80,7 @@ describe('types/graphql.ts', () => {
       const gen = `[${index}] ${genLines[index]}`;
       const raw = `[${index}] ${rawLines[index]}`;
       if (gen.endsWith(' # INPUT_OBJECT')) {
-        console.warn(gen, raw);
+        // console.warn(gen, raw);
       } else {
         expect(`[${index}] ${genLines[index]}`).toBe(`[${index}] ${rawLines[index]}`);
       }

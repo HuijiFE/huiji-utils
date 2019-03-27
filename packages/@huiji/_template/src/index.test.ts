@@ -1,7 +1,7 @@
 /**
  * Test index.ts
  */
-import { sayHello } from './index';
+import { sayHello } from '.';
 
 describe('Test Hello World', () => {
   test('sayHello', () => {

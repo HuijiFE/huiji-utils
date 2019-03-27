@@ -457,6 +457,7 @@ export async function getIntrospection(
     hoistSchemaTypes(schema);
   }
 
+  // eslint-disable-next-line no-underscore-dangle
   schema.__info = `entry: ${entry}
 timestamp: ${new Date().toISOString()}
 ----------------------------------------------------------------`;
@@ -499,6 +500,8 @@ export function hoistSchemaTypes(schema: __Schema): __Schema {
 
           return master;
         }
+
+        return undefined;
       })
       .filter((td): td is __Type => !!td),
   );

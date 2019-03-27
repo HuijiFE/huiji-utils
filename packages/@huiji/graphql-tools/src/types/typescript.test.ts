@@ -2,16 +2,16 @@
  * Test
  */
 import fs from 'fs';
+import prettier from 'prettier';
+import { defaultPrettierOptions } from '../prettier-options';
 import { __Type, __TypeKind, __Field, getIntrospection } from '../introspection';
 import { generateTypeScriptDeclaration } from './typescript';
-import { defaultPrettierOptions } from '../prettier-options';
 import {
   gamelibEntry,
   rawIntroAsync,
   rawIDLAsync,
   rawIntroAsyncNoSort,
 } from '../../test/test-utils';
-import prettier from 'prettier';
 
 const entry: string = 'https://graphql.xy.huijitrans.com/graphql';
 

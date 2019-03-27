@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import prettier, { Options as PrettierOptions } from 'prettier';
 import { defaultPrettierOptions } from '../prettier-options';
 import {
@@ -166,8 +167,8 @@ function genDescription(
   description: string | null | undefined,
   line?: boolean,
 ): string[] {
-  return description
-    ? line
+  if (description) {
+    return line
       ? description
           .trim()
           .split(/[\n\r]/)
@@ -179,8 +180,10 @@ function genDescription(
             .split(/[\n\r]/)
             .map(l => ` * ${l}`),
           ' */',
-        ]
-    : [];
+        ];
+  }
+
+  return [];
 }
 
 function genFieldOrValueArray(
@@ -234,7 +237,7 @@ function genFieldOrValue(
   }
 
   if (category === 'inputFields' && 'defaultValue' in mb && mb.defaultValue) {
-    let defaultValue = mb.defaultValue;
+    let { defaultValue } = mb;
     if (isEnum(mb.type)) {
       defaultValue = `${mb.type.name}.${defaultValue.replace(/"/g, '')}`;
     }

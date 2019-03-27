@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import prettier, { Options as PrettierOptions } from 'prettier';
 import { defaultPrettierOptions } from '../prettier-options';
 import {
@@ -161,13 +162,13 @@ function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
   }
 
   if ('defaultValue' in fd && fd.defaultValue) {
-    let defaultValue = fd.defaultValue;
+    let { defaultValue } = fd;
     if (isEnum(fd.type)) {
       defaultValue = defaultValue.replace(/"/g, '');
     }
     if (isInputObject(fd.type)) {
       // TODO
-      defaultValue = defaultValue.replace(/[\n\r]+(\ +)?/g, ' ').replace(/"/g, '\\"');
+      defaultValue = defaultValue.replace(/[\n\r]+( +)?/g, ' ').replace(/"/g, '\\"');
       defaultValue = `"${defaultValue}" # INPUT_OBJECT`;
     }
     lastLine += ` = ${defaultValue}`;
