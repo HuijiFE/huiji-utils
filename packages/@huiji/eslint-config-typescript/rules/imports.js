@@ -10,6 +10,7 @@ module.exports = {
   },
 
   rules: {
+    // disable this rule, because file extensions in imports will be checked by typescript
     'import/extensions': 'off',
     // 'import/extensions': [
     //   'error',
@@ -22,6 +23,7 @@ module.exports = {
     //     tsx: 'never',
     //   },
     // ],
+
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',

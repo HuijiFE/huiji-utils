@@ -486,6 +486,7 @@ export function sortSchemaTypes(schema: __Schema): __Schema {
  * Hoists scalar types and the types for query, mutation and subscription
  */
 export function hoistSchemaTypes(schema: __Schema): __Schema {
+  // eslint-disable-next-line no-param-reassign
   schema.types = [
     ...schema.types.filter(td => td.kind === __TypeKind.SCALAR),
     ...schema.types.filter(td => td.kind !== __TypeKind.SCALAR),
