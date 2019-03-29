@@ -3,7 +3,9 @@ module.exports = {
     es6: true,
     node: true,
   },
-  parser: require.resolve('@typescript-eslint/parser'),
+
+  plugins: ['@typescript-eslint'],
+
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -12,26 +14,23 @@ module.exports = {
     },
   },
 
-  plugins: ['@typescript-eslint'],
-
   extends: [
     'eslint-config-airbnb-base',
+    'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
     'eslint-config-prettier/@typescript-eslint',
-    './rules/best-practices',
-    './rules/errors',
-    './rules/node',
-    './rules/style',
-    './rules/variables',
-    './rules/es6',
-    './rules/imports',
-  ].map(require.resolve),
+  ].concat(
+    [
+      './rules/best-practices',
+      './rules/errors',
+      './rules/node',
+      './rules/style',
+      './rules/variables',
+      './rules/es6',
+      './rules/imports',
+      './rules/typescript',
+    ].map(require.resolve),
+  ),
 
-  rules: {
-    // https://typescript-eslint.io/parser
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
-    // https://github.com/typescript-eslint/typescript-eslint/issues/46
-    // '@typescript-eslint/no-unused-vars': 'error',
-  },
+  rules: {},
 };

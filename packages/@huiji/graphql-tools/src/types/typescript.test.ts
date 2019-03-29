@@ -2,18 +2,9 @@
  * Test
  */
 import fs from 'fs';
-import prettier from 'prettier';
-import { defaultPrettierOptions } from '../prettier-options';
-import { __Type, __TypeKind, __Field, getIntrospection } from '../introspection';
+import { getIntrospection } from '../introspection';
 import { generateTypeScriptDeclaration } from './typescript';
-import {
-  gamelibEntry,
-  rawIntroAsync,
-  rawIDLAsync,
-  rawIntroAsyncNoSort,
-} from '../../test/test-utils';
-
-const entry: string = 'https://graphql.xy.huijitrans.com/graphql';
+import { gamelibEntry, rawIntroAsync, rawIntroAsyncNoSort } from '../../test/test-utils';
 
 const customScalars: Record<string, string> = {
   Date: 'string',

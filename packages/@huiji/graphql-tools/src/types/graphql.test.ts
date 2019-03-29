@@ -2,10 +2,9 @@
  * Test
  */
 import fs from 'fs';
-import pth from 'path';
 import prettier from 'prettier';
 import { defaultPrettierOptions } from '../prettier-options';
-import { __Type, __TypeKind, __Field, getIntrospection } from '../introspection';
+import { getIntrospection, __TypeKind } from '../introspection';
 import { generateGraphQLSchema } from './graphql';
 import {
   gamelibEntry,
@@ -13,8 +12,6 @@ import {
   rawIDLAsync,
   rawIntroAsyncNoSort,
 } from '../../test/test-utils';
-
-const entry: string = 'https://graphql.xy.huijitrans.com/graphql';
 
 describe('types/graphql.ts', () => {
   test('generateSchema', async () => {
@@ -43,7 +40,7 @@ describe('types/graphql.ts', () => {
     expect(typeof genSchema).toBe('string');
 
     // for remove comments
-    const filter = () => {
+    const filter = (): ((l: string) => boolean) => {
       let isComment = false;
 
       return (l: string) => {
@@ -82,7 +79,7 @@ describe('types/graphql.ts', () => {
       if (gen.endsWith(' # INPUT_OBJECT')) {
         // console.warn(gen, raw);
       } else {
-        expect(`[${index}] ${genLines[index]}`).toBe(`[${index}] ${rawLines[index]}`);
+        expect(gen).toBe(raw);
       }
     }
 
@@ -105,7 +102,17 @@ describe('types/graphql.ts', () => {
   test('generateSchema GitHub debug', async () => {
     const rawIntro = await rawIntroAsyncNoSort;
 
-    rawIntro.subscriptionType = { name: 'Subscription' } as any;
+    rawIntro.subscriptionType = {
+      kind: __TypeKind.OBJECT,
+      name: 'Subscription',
+      description: null,
+      enumValues: [],
+      fields: [],
+      inputFields: [],
+      interfaces: [],
+      ofType: null,
+      possibleTypes: [],
+    };
     const genSchema = generateGraphQLSchema(rawIntro, {
       debug: true,
       outputRoot: true,

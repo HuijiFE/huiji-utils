@@ -1,6 +1,5 @@
+// note that airbnb base config includes plugin import
 module.exports = {
-  plugins: ['import'],
-
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],

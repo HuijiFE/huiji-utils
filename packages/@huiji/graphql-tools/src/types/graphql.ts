@@ -146,8 +146,8 @@ function genFieldOrValueArray(
 }
 
 function genFieldOrValue(fd: __Field | __InputValue | __EnumValue): string[] {
-  let firstLine: string = fd.name;
-  let lastLine: string = '';
+  let firstLine = fd.name;
+  let lastLine = '';
 
   const args: string[] = 'args' in fd ? genFieldOrValueArray(fd.args) : [];
   if (args.length > 0) {

@@ -112,7 +112,17 @@ export function generateTypeScriptDeclaration(
   return idl;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function genRoot(schema: __Schema): string {
+  // let idl = `export interface Schema {\n  query: ${schema.queryType.name};\n`;
+  // if (schema.mutationType) {
+  //   idl += `  mutation: ${schema.mutationType.name};\n`;
+  // }
+  // if (schema.subscriptionType) {
+  //   idl += `  subscription: ${schema.subscriptionType.name};\n`;
+  // }
+  // return idl;
+
   return '';
 }
 

@@ -3,7 +3,7 @@
  */
 import fs from 'fs';
 import { __IntrospectionBase, getIntrospection, commonCompare } from './introspection';
-import { gamelibEntry, rawIntroAsync, rawIntroAsyncNoSort } from '../test/test-utils';
+import { gamelibEntry } from '../test/test-utils';
 
 describe('introspection.ts', () => {
   test('Compare', async () => {

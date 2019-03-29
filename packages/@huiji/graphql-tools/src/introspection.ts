@@ -102,7 +102,7 @@ fragment TypeRef on __Type {
 }
 `;
 
-// tslint:disable:class-name no-reserved-keywords
+/* eslint-disable @typescript-eslint/class-name-casing */
 
 /**
  * A GraphQL Schema defines the capabilities of a GraphQL server.
@@ -151,6 +151,8 @@ export interface __Schema {
  * List and NonNull types compose other types.
  */
 export interface __Type {
+  kind: __TypeKind;
+  name: string | null;
   description: string | null;
 
   /**
@@ -174,10 +176,6 @@ export interface __Type {
   inputFields: (__InputValue)[];
 
   interfaces: (__Type)[];
-
-  kind: __TypeKind;
-
-  name: string | null;
 
   ofType: __Type | null;
 
@@ -405,11 +403,14 @@ export interface __IntrospectionBase {
   name: string | undefined | null;
 }
 
+/* eslint-enable @typescript-eslint/class-name-casing */
+
 // tslint:enable:class-name no-reserved-keywords
 
-const stringCompare = (a: string, b: string) => (a < b && -1) || (a > b && 1) || 0;
+const stringCompare = (a: string, b: string): number =>
+  (a < b && -1) || (a > b && 1) || 0;
 
-export const commonCompare = (a: __IntrospectionBase, b: __IntrospectionBase) =>
+export const commonCompare = (a: __IntrospectionBase, b: __IntrospectionBase): number =>
   stringCompare(a.name || '', b.name || '');
 
 export interface IntrospectionOptions {
@@ -422,47 +423,6 @@ export interface IntrospectionOptions {
    * @default true
    */
   hoist?: boolean;
-}
-
-/**
- * Get GraphQL schema (introspection format)
- * @param entry the url of GraphQL API entry
- */
-export async function getIntrospection(
-  entry: string,
-  config?: AxiosRequestConfig,
-  { sort = true, hoist = true }: IntrospectionOptions = {},
-): Promise<__Schema> {
-  const {
-    data: {
-      data: { __schema: schema },
-    },
-  } = await axios.post<{
-    data: {
-      __schema: __Schema;
-    };
-  }>(
-    entry,
-    {
-      query,
-    },
-    config,
-  );
-
-  if (sort) {
-    sortSchemaTypes(schema);
-  }
-
-  if (hoist) {
-    hoistSchemaTypes(schema);
-  }
-
-  // eslint-disable-next-line no-underscore-dangle
-  schema.__info = `entry: ${entry}
-timestamp: ${new Date().toISOString()}
-----------------------------------------------------------------`;
-
-  return schema;
 }
 
 /**
@@ -506,6 +466,47 @@ export function hoistSchemaTypes(schema: __Schema): __Schema {
       })
       .filter((td): td is __Type => !!td),
   );
+
+  return schema;
+}
+
+/**
+ * Get GraphQL schema (introspection format)
+ * @param entry the url of GraphQL API entry
+ */
+export async function getIntrospection(
+  entry: string,
+  config?: AxiosRequestConfig,
+  { sort = true, hoist = true }: IntrospectionOptions = {},
+): Promise<__Schema> {
+  const {
+    data: {
+      data: { __schema: schema },
+    },
+  } = await axios.post<{
+    data: {
+      __schema: __Schema;
+    };
+  }>(
+    entry,
+    {
+      query,
+    },
+    config,
+  );
+
+  if (sort) {
+    sortSchemaTypes(schema);
+  }
+
+  if (hoist) {
+    hoistSchemaTypes(schema);
+  }
+
+  // eslint-disable-next-line no-underscore-dangle
+  schema.__info = `entry: ${entry}
+timestamp: ${new Date().toISOString()}
+----------------------------------------------------------------`;
 
   return schema;
 }
