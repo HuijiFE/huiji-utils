@@ -32,9 +32,11 @@
   "scripts": {
     "clean:dist": "rimraf dist",
     "gen-files": "yarn ts scripts/gen-files.ts",
+    "babel:cjs": "babel src -x .ts,.tsx --out-dir dist/cjs --cjs",
+    "babel:esm": "babel src -x .ts,.tsx --out-dir dist/esm",
     "tsc:cjs": "tsc -p tsconfig.cjs.json",
     "tsc:esm": "tsc -p tsconfig.esm.json",
-    "build": "yarn tsc:cjs && yarn tsc:esm",
+    "build": "yarn babel:cjs && yarn babel:esm && yarn tsc:cjs && yarn tsc:esm",
     "lint": "eslint  src/ --ext .ts,.tsx",
     "test": "jest --maxWorkers=4",
     "ts": "ts-node -r tsconfig-paths/register -P scripts/tsconfig.json"
